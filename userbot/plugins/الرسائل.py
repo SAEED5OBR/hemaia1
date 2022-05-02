@@ -28,7 +28,7 @@ from telethon.tl.types import ChatAdminRights
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.utils import get_display_name
 from googletrans import LANGUAGES, Translator
-from telethon.tl.types import InputMessagesFilterDocument, InputMessagesFilterEmpty, InputMessagesFilterGeo, InputMessagesFilterGif, InputMessagesFilterMusic, InputMessagesFilterPhotos, InputMessagesFilterRoundVideo, InputMessagesFilterUrl, InputMessagesFilterVideo, InputMessagesFilterVoice, InputMessagesFilterMyMentions, InputMessagesFilterPinned     
+from telethon.tl.types import InputMessagesFilterDocument, InputMessagesFilterEmpty, InputMessagesFilterGeo, InputMessagesFilterGif, InputMessagesFilterMusic, InputMessagesFilterPhotos, InputMessagesFilterRoundVideo, InputMessagesFilterUrl, InputMessagesFilterVideo, InputMessagesFilterVoice, InputMessagesFilterMyMentions, InputMessagesFilterPinned
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.tl.types import ChannelParticipantAdmin as admin
 from telethon.tl.types import ChannelParticipantCreator as owner
@@ -71,7 +71,7 @@ def build_keyboard(buttons):
         else:
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
-@iqthon.on(admin_cmd(pattern="وقتيه (\d*) ([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="وقتيه (\d*) ([\s\S]*)"))
 async def _(event):
     cat = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     message = cat[1]
@@ -91,7 +91,7 @@ async def all_groups_id(cat):
         if isinstance(entity, Channel) and entity.megagroup:
             catgroups.append(entity.id)
     return catgroups
-@iqthon.on(admin_cmd(pattern="ازاله التوجيه(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="ازاله التوجيه(?: |$)(.*)"))
 async def _(event):
     try:
         await event.delete()
@@ -103,7 +103,7 @@ async def _(event):
     if m.media and not isinstance(m.media, MessageMediaWebPage):
         return await event.client.send_file(event.chat_id, m.media, caption=m.text)
     await event.client.send_message(event.chat_id, m.text)
-@iqthon.on(admin_cmd(pattern=f"{ALLGROUB} ?(.*)$"))    
+@iqthon.on(admin_cmd(pattern=f"{ALLGROUB} ?(.*)$"))
 async def gcast(event):
     if not event.out and not is_fullsudo(event.sender_id):
         return await edit_or_reply(event, "هـذا الامـر مقـيد ")
@@ -154,7 +154,7 @@ async def _(event):
         await no_admin_privilege_message.edit("**☭ ⦙   هذا الشخص الذي قام بتكرار الرسائل والازعاج **")
     else:
         await event.client.send_message(entity=event.chat_id, message=f"""**☭ ⦙   تحذير تكرار فـي المجموعة : لـ** [User](tg://user?id={event.message.sender_id}) تم تقيد الشخص بسبب عمل تكرار للرسائل والازعاج.""", reply_to=event.message.id)
-@iqthon.on(admin_cmd(pattern=f"{ALLPRIVATE} ?(.*)$"))    
+@iqthon.on(admin_cmd(pattern=f"{ALLPRIVATE} ?(.*)$"))
 async def gucast(event):
     if not event.out and not is_fullsudo(event.sender_id):
         return await edit_or_reply(event, "هـذا الامـر مقـيد ")
@@ -238,7 +238,7 @@ async def _iq(iqthon):
     await iqthon.edit(f"**تم بدء وضع الكتابة الوهمية لـ {iq} من الثوانـي**")
     async with iqthon.client.action(iqthon.chat_id, "typing"):
         await asyncio.sleep(iq)
-@iqthon.on(admin_cmd(pattern="تكرار (.*)"))    
+@iqthon.on(admin_cmd(pattern="تكرار (.*)"))
 async def spammer(event):
     sandy = await event.get_reply_message()
     cat = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
@@ -254,7 +254,7 @@ async def spammer(event):
         sleeptimem = 0.3
     await event.delete()
     await spam_function(event, sandy, cat, sleeptimem, sleeptimet)
-@iqthon.on(admin_cmd(pattern="مؤقته (\d*) ([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="مؤقته (\d*) ([\s\S]*)"))
 async def selfdestruct(destroy):
     cat = ("".join(destroy.text.split(maxsplit=1)[1:])).split(" ", 1)
     message = cat[1]
@@ -315,7 +315,7 @@ async def _(event):  # sourcery no-metrics
             file=file_media,
             parse_mode="html")
         update_previous_welcome(event.chat_id, current_message.id)
-@iqthon.on(admin_cmd(pattern="ترحيب(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="ترحيب(?:\s|$)([\s\S]*)"))
 async def save_welcome(event):
     msg = await event.get_reply_message()
     string = "".join(event.text.split(maxsplit=1)[1:])
@@ -337,7 +337,7 @@ async def save_welcome(event):
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("updated"))
     await edit_or_reply("☭ ⦙  حدث خطأ أثناء وضع ترحيب في هذه المجموعة ⚠️")
-@iqthon.on(admin_cmd(pattern="مسح الترحيبات(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="مسح الترحيبات(?: |$)(.*)"))
 async def del_welcome(event):
     if rm_welcome_setting(event.chat_id) is True:
         await edit_or_reply(event, "**☭ ⦙  تم مسح جميع الرسائل الترحيبية لهذه الدردشة بنجاح ✅**")
@@ -345,7 +345,7 @@ async def del_welcome(event):
         await edit_or_reply(event, "**☭ ⦙  لم يتم حفظ أي رسائل ترحيبية هنا ⚠️**")
 Tnsmeetst = {}
 Tnsmeet = {"ا": InputMessagesFilterVideo, "ل": InputMessagesFilterGif, "و": InputMessagesFilterUrl, "س": InputMessagesFilterPhotos, "ئ": InputMessagesFilterDocument, "ط": InputMessagesFilterVoice}
-@iqthon.on(admin_cmd(pattern="ترحيباتي(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="ترحيباتي(?: |$)(.*)"))
 async def show_welcome(event):
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
@@ -357,7 +357,7 @@ async def show_welcome(event):
     elif cws.reply:
         await edit_or_reply(event, "**☭ ⦙  أنا الآن أقوم بالترحيب بالمستخدمين الجدد مع هذه الرسالة ✅**")
         await event.reply(cws.reply, link_preview=False)
-@iqthon.on(admin_cmd(pattern="رساله الترحيب السابقه (تشغيل|ايقاف)$"))    
+@iqthon.on(admin_cmd(pattern="رساله الترحيب السابقه (تشغيل|ايقاف)$"))
 async def del_welcome(event):
     input_str = event.pattern_match.group(1)
     if input_str == "تشغيل":
@@ -369,7 +369,7 @@ async def del_welcome(event):
         addgvar("clean_welcome", "false")
         return await edit_delete(event, "**☭ ⦙  من الآن لن يتم حذف رسالة الترحيب السابقة ⚠️**")
     await edit_delete(event, "**☭ ⦙  تم إيقافها بالفعل ✅**")
-@iqthon.on(admin_cmd(pattern="موقع(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="موقع(?: |$)(.*)"))
 async def gps(event):
     reply_to_id = await reply_id(event)
     input_str = event.pattern_match.group(1)
@@ -407,7 +407,7 @@ async def _iq(iqthon):
     await iqthon.edit(f"**تم بدء وضع فيديو وهمي لـ {iq} من الثوانـي**")
     async with iqthon.client.action(iqthon.chat_id, "record-video"):
         await asyncio.sleep(iq)
-@iqthon.on(admin_cmd(pattern="ازعاج(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="ازعاج(?: |$)(.*)"))
 async def echo(event):
     if event.reply_to_msg_id is None:
         return await edit_or_reply(event, "**☭ ⦙   يرجى الرد على الشخص الذي تـريد ازعاجه ❕**")
@@ -434,7 +434,7 @@ async def echo(event):
         await edit_delete(catevent, f"☭ ⦙   Error:\n`{str(e)}`")
     else:
         await edit_or_reply(catevent, "**☭ ⦙   تـم تفعـيل امـر التقليد علـى هذا الشـخص**\n **☭ ⦙   سـيتم تقليـد جميع رسائلـه هـنا**")
-@iqthon.on(admin_cmd(pattern="الغاء الازعاج( -a)?"))    
+@iqthon.on(admin_cmd(pattern="الغاء الازعاج( -a)?"))
 async def echo(event):
     input_str = event.pattern_match.group(1)
     if input_str:
@@ -457,8 +457,8 @@ async def echo(event):
             await edit_delete(event, f"**☭ ⦙   هناك خطا ‼️ :**\n`{str(e)}`", 10)
         else:
             await edit_or_reply(event, "**☭ ⦙   تـم ايقاف وضـع الازعاج على الجميع بنجاح ✅**")
-@iqthon.on(admin_cmd(pattern="المزعجهم( -a)?$"))    
-async def echo(event):  
+@iqthon.on(admin_cmd(pattern="المزعجهم( -a)?$"))
+async def echo(event):
     input_str = event.pattern_match.group(1)
     private_chats = ""
     output_str = "**☭ ⦙   قائمه الاشخاص الذين تم ازعاجهم :**\n\n"
@@ -517,7 +517,7 @@ async def _iq(iqthon):
     async with iqthon.client.action(iqthon.chat_id, "record-audio"):
         await asyncio.sleep(iq)
 @iqthon.on(admin_cmd(pattern="تنظيف(?:\s|$)([\s\S]*)"))
-async def iq(cloneiq):  
+async def iq(cloneiq):
     chat = await cloneiq.get_input_chat()
     msgs = []
     count = 0
@@ -744,7 +744,7 @@ async def _iq(iqthon):
                 return await event.edit("**اكتب الامر بشكل صحيح**")
     await iqthon.edit(f"**تم بدء وضع لعب وهمي لـ {iq} من الثوانـي**")
     async with iqthon.client.action(iqthon.chat_id, "game"):
-        await asyncio.sleep(iq)  
+        await asyncio.sleep(iq)
 @iqthon.iq_cmd(pattern="قرائه(?:\s|$)([\s\S]*)",)
 async def ocriq(iqthonevent):
     iqqevent = await edit_or_reply(iqthonevent, "جاري قرائه الصوره ...")
@@ -760,7 +760,7 @@ async def ocriq(iqthonevent):
     else:
         await iqqevent.edit(f"**الموجود في الصوره هوه :** \n\n {ParsedText}")
     os.remove(downloaded_file_name)
-@iqthon.on(admin_cmd(pattern="اضف رد ([\s\S]*)")) 
+@iqthon.on(admin_cmd(pattern="اضف رد ([\s\S]*)"))
 async def add_new_filter(new_handler):
     keyword = new_handler.pattern_match.group(1)
     string = new_handler.text.partition(keyword)[2]
@@ -800,7 +800,7 @@ async def _iq(iqthon):
     await iqthon.edit(f"**تم بدء وضع موقع وهمي لـ {iq} من الثوانـي**")
     async with iqthon.client.action(iqthon.chat_id, "location"):
         await asyncio.sleep(iq)
-@iqthon.on(admin_cmd(pattern="جميع الردود(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="جميع الردود(?: |$)(.*)"))
 async def on_snip_list(event):
     OUT_STR = "**☭ ⦙  لايوجـد أيّ رد في هـذه الدردشـة  ✕**"
     filters = get_filters(event.chat_id)
@@ -811,14 +811,14 @@ async def on_snip_list(event):
     await edit_or_reply(event, OUT_STR, caption="**☭ ⦙  الـردود المتاحـة في الدردشـة الحاليـة ⎙ **", file_name="filters.text")
 Tnsmeet1 = {}
 Tnsmeet1 = {"ا": InputMessagesFilterPhotos, "ل": InputMessagesFilterDocument, "ر": InputMessagesFilterUrl, "س": InputMessagesFilterEmpty, "ئ": InputMessagesFilterGif,"ج": InputMessagesFilterVideo,  "م": InputMessagesFilterMusic, "ي": InputMessagesFilterMyMentions, "ع": InputMessagesFilterGeo}
-@iqthon.on(admin_cmd(pattern="مسح رد ([\s\S]*)")) 
+@iqthon.on(admin_cmd(pattern="مسح رد ([\s\S]*)"))
 async def remove_a_filter(r_handler):
     filt = r_handler.pattern_match.group(1)
     if not remove_filter(r_handler.chat_id, filt):
         await r_handler.edit("**☭ ⦙   الـرد  {}  غيـر موجـود ❗️**".format(filt))
     else:
         await r_handler.edit("**☭ ⦙  تـم حـذف الـردّ  {}  بنجـاح ✓**".format(filt))
-@iqthon.on(admin_cmd(pattern="مسح جميع الردود(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="مسح جميع الردود(?: |$)(.*)"))
 async def on_all_snip_delete(event):
     filters = get_filters(event.chat_id)
     if filters:
@@ -826,7 +826,7 @@ async def on_all_snip_delete(event):
         await edit_or_reply(event, f"**☭ ⦙  تـم حـذف ردود الدردشـة الحاليـة بنجـاح ✓**")
     else:
         await edit_or_reply(event, f"**☭ ⦙  لايوجـد أيّ رد في هـذه المجموعـة ✕**")
-@iqthon.on(admin_cmd(pattern="تكلم(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="تكلم(?:\s|$)([\s\S]*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
     start = datetime.now()
@@ -849,7 +849,7 @@ async def _(event):
         os.makedirs("./temp/")
     required_file_name = "./temp/" + "voice.ogg"
     try:
-        
+
         tts = gTTS(text, lang=lan)
         tts.save(required_file_name)
         command_to_execute = [
@@ -912,15 +912,15 @@ async def _(event):
         await edit_or_reply(event, output_str)
     except Exception as exc:
         await edit_delete(event, f"**خـطأ:**\n`{str(exc)}`", time=5)
-@iqthon.on(admin_cmd(pattern=f"{FOTOSECRET}(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern=f"{FOTOSECRET}(?: |$)(.*)"))
 async def iq(event):
   if not event.is_reply:
     return await event.edit('**يجـب عـليك الـرد عـلى صـورة ذاتيـة الـتدمير**')
   ogtah = await event.get_reply_message()
   pic = await ogtah.download_media()
-  await bot.send_file('me', pic, caption=f"""**الصـورة الوقتيه ✅**\- So : @VFF34""")
+  await bot.send_file('me', pic, caption=f"""**الصـورة الوقتيه ✅**\- So : @ghtanisaeed""")
   await event.delete()
-@iqthon.on(admin_cmd(pattern="تاريخ الرساله(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="تاريخ الرساله(?: |$)(.*)"))
 async def _(event):
     reply = await event.get_reply_message()
     if reply:
@@ -946,8 +946,8 @@ async def _iq(iqthon):
                 return await event.edit("**اكتب الامر بشكل صحيح**")
     await iqthon.edit(f"**تم بدء وضع جهه اتصال وهمي لـ {iq} من الثوانـي**")
     async with iqthon.client.action(iqthon.chat_id, "contact"):
-        await asyncio.sleep(iq)  
-@iqthon.on(admin_cmd(pattern="ماركدون(?:\s|$)([\s\S]*)"))    
+        await asyncio.sleep(iq)
+@iqthon.on(admin_cmd(pattern="ماركدون(?:\s|$)([\s\S]*)"))
 async def _(event):
     reply_to_id = await reply_id(event)
     # soon will try to add media support
@@ -963,7 +963,7 @@ async def _(event):
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
 @iqthon.on(admin_cmd(pattern="حذف(?:\s|$)([\s\S]*)"))
-async def iq(cloneiq):  
+async def iq(cloneiq):
     chat = await cloneiq.get_input_chat()
     msgs = []
     count = 0
@@ -1194,7 +1194,7 @@ async def iq(iqthon):
         mentions += f" \n ☭ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
     await iqthon.client.send_message(iqthon.chat_id, mentions)
     await iqthon.delete()
-@iqthon.on(admin_cmd(pattern="احسب ([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="احسب ([\s\S]*)"))
 async def calculator(event):
     cmd = event.text.split(" ", maxsplit=1)[1]
     event = await edit_or_reply(event, "**☭ ⦙   جـاري حسـاب المسـئلـة 📐**")
@@ -1267,7 +1267,7 @@ async def remove_iq(event):
         file = remove_bg_image
         await event.client.send_file(event.chat_id,file,force_document=True,reply_to=message_id)
     await catevent.delete()
-@iqthon.on(admin_cmd(pattern="ابلاغ الادمنيه(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="ابلاغ الادمنيه(?: |$)(.*)"))
 async def iq(event):
     mentions = "@تاك للادمنيه : **☭ ⦙  تم رصـد إزعـاج ⚠️**"
     chat = await event.get_input_chat()
@@ -1294,7 +1294,7 @@ async def on_new_message(event):
                 for word in snips:
                     sql1.rm_from_blacklist(event.chat_id, word.lower())
             break
-@iqthon.on(admin_cmd(pattern="خط ملصق ?(?:(.*?) ?; )?([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="خط ملصق ?(?:(.*?) ?; )?([\s\S]*)"))
 async def sticklet(event):
     "your text as sticker"
     R = random.randint(0, 256)
@@ -1334,7 +1334,7 @@ async def sticklet(event):
         os.remove(FONT_FILE)
     except BaseException:
         pass
-@iqthon.on(admin_cmd(pattern="ضفدع(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="ضفدع(?:\s|$)([\s\S]*)"))
 async def honk(event):
     "Make honk say anything."
     text = event.pattern_match.group(1)
@@ -1348,7 +1348,7 @@ async def honk(event):
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
-@iqthon.on(admin_cmd(pattern="منع(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="منع(?:\s|$)([\s\S]*)"))
 async def _(event):
     text = event.pattern_match.group(1)
     to_blacklist = list({trigger.strip() for trigger in text.split("\n") if trigger.strip()})
@@ -1356,7 +1356,7 @@ async def _(event):
     for trigger in to_blacklist:
         sql1.add_to_blacklist(event.chat_id, trigger.lower())
     await edit_or_reply(event, "**⌔︙ تم اضافة {} الكلمة في قائمة المنع بنجاح ✅**".format(len(to_blacklist)),)
-@iqthon.on(admin_cmd(pattern="الغاء منع(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="الغاء منع(?:\s|$)([\s\S]*)"))
 async def _(event):
     text = event.pattern_match.group(1)
     to_unblacklist = list({trigger.strip() for trigger in text.split("\n") if trigger.strip()})
@@ -1364,7 +1364,7 @@ async def _(event):
         bool(sql1.rm_from_blacklist(event.chat_id, trigger.lower()))
         for trigger in to_unblacklist)
     await edit_or_reply(event, f"تم حذف   {successful} / {len(to_unblacklist)} من قائمه المنع")
-@iqthon.on(admin_cmd(pattern="قائمه المنع$"))    
+@iqthon.on(admin_cmd(pattern="قائمه المنع$"))
 async def _(event):
     all_blacklisted = sql1.get_chat_blacklist(event.chat_id)
     OUT_STR = "الكلمات الممنوعه هنا :\n"
@@ -1402,7 +1402,7 @@ async def iq(msg1):
                 await edit_or_reply(msg1, "**☭ ⦙   عـذرا  لا استـطيع حـذف الرسـالة. ⁉️**")
     elif not input_str:
         await msg1.delete()
-@iqthon.on(admin_cmd(pattern="تاك بالكلام ([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="تاك بالكلام ([\s\S]*)"))
 async def iq(event):
     user, input_str = await get_user_from_event(event)
     if not user:
@@ -1414,7 +1414,7 @@ async def get_font_file(client, channel_id, search_kw=""):
     font_file_message_s = await client.get_messages(        entity=channel_id,        filter=InputMessagesFilterDocument,                limit=None,        search=search_kw,    )
     font_file_message = random.choice(font_file_message_s)
     return await client.download_media(font_file_message)
-@iqthon.on(admin_cmd(pattern="لافته(?:\s|$)([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="لافته(?:\s|$)([\s\S]*)"))
 async def waifu(animu):
     text = animu.pattern_match.group(1)
     reply_to_id = await reply_id(animu)

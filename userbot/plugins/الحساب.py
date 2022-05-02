@@ -70,7 +70,7 @@ from ..sql_helper.locks_sql import *
 
 from PIL import Image, ImageDraw, ImageFont
 import PIL.ImageOps
-from . import AUTONAME, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, _catutils, edit_delete, iqthon, logging, spamwatch    
+from . import AUTONAME, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, _catutils, edit_delete, iqthon, logging, spamwatch
 def inline_mention(user):
     full_name = user_full_name(user) or "No Name"
     return f"{full_name}"
@@ -114,7 +114,7 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
     args = shlex.split(cmd)
     process = await asyncio.create_subprocess_exec(        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE    )
     stdout, stderr = await process.communicate()
-    return (        stdout.decode("utf-8", "replace").strip(),        stderr.decode("utf-8", "replace").strip(),        process.returncode,        process.pid,    )    
+    return (        stdout.decode("utf-8", "replace").strip(),        stderr.decode("utf-8", "replace").strip(),        process.returncode,        process.pid,    )
 async def add_frame(imagefile, endname, x, color):
     image = Image.open(imagefile)
     inverted_image = PIL.ImageOps.expand(image, border=x, fill=color)
@@ -124,7 +124,7 @@ async def crop(imagefile, endname, x):
     inverted_image = PIL.ImageOps.crop(image, border=x)
     inverted_image.save(endname)
 @iqthon.on(admin_cmd(pattern="احصائيات حسابي(?: |$)(.*)"))
-async def stats(event):  
+async def stats(event):
     cat = await edit_or_reply(event, STAT_INDICATION)
     start_time = time.time()
     private_chats = 0
@@ -875,7 +875,7 @@ async def iqvois(vois):
         await vois.client.send_file(vois.chat_id, iqvois50 , reply_to=Ti)
         await vois.delete()
 @iqthon.on(admin_cmd(pattern="قائمه (جميع القنوات|قنوات اديرها|قنوات امتلكها)$"))
-async def stats(event):  
+async def stats(event):
     catcmd = event.pattern_match.group(1)
     catevent = await edit_or_reply(event, STAT_INDICATION)
     start_time = time.time()
@@ -920,7 +920,7 @@ async def stats(event):
             output,
             caption=caption        )
 @iqthon.on(admin_cmd(pattern="قائمه (جميع المجموعات|مجموعات اديرها|مجموعات امتلكها)$"))
-async def stats(event):  
+async def stats(event):
     catcmd = event.pattern_match.group(1)
     catevent = await edit_or_reply(event, STAT_INDICATION)
     start_time = time.time()
@@ -1054,7 +1054,7 @@ async def _(event):
         await catevent.edit(str(e))
     else:
         if photo:
-            await catevent.edit("**☭ ⦙   أشترك @VFF35**")
+            await catevent.edit("**☭ ⦙   أشترك @ghtanisaeed**")
             if photo.endswith((".mp4", ".MP4")):
                 # https://t.me/tgbetachat/324694
                 size = os.stat(photo).st_size
@@ -1396,7 +1396,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"⨳ | {custom} ")
     ll5 = user.first_name.replace("\u2060", "") if user.first_name else (" ")
     kno = user.last_name.replace("\u2060", "") if user.last_name else (" ")
-    await edit_or_reply(mention, f"⨳  {ll5} {kno}")  
+    await edit_or_reply(mention, f"⨳  {ll5} {kno}")
 @iqthon.on(admin_cmd(pattern="صورته(?:\s|$)([\s\S]*)"))
 async def potocmd(event):
     uid = "".join(event.raw_text.split(maxsplit=1)[1:])
@@ -1440,7 +1440,7 @@ async def potocmd(event):
 
         send_photos = await event.client.download_media(photos[uid - 1])
         await event.client.send_file(event.chat_id, send_photos)
-    await event.delete()  
+    await event.delete()
 @iqthon.on(admin_cmd(pattern=f"{OR_FOTOAUTO}(?: |$)(.*)"))
 async def _(event):
     downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
@@ -1547,7 +1547,7 @@ async def _(e):
     except MessageTooLongError:
         with io.BytesIO(str.encode(text)) as out_file:
             out_file.name = "output.txt"
-            await e.reply(                f"`{e.text}`", file=out_file, thumb=None ) 
+            await e.reply(                f"`{e.text}`", file=out_file, thumb=None )
         await e.delete()
 @iqthon.on(admin_cmd(pattern="كول (.*)"))
 async def _(event):
@@ -1573,7 +1573,7 @@ def text_set(text):
                 for z in range(1, k + 2):
                     lines.append(line[((z - 1) * 55) : (z * 55)])
     return lines[:25]
-    
+
 
 @iqthon.on(admin_cmd(pattern="كتابه ?(.*)"))
 async def writer(e):
@@ -2298,7 +2298,7 @@ async def autopic(event):
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
         drawn_text.text((300, 450), current_time, font=fnt, fill=(255, 255, 255))
         img.save(photo)
-        file = await event.client.upload_file(photo)  
+        file = await event.client.upload_file(photo)
         try:
             await event.client(                functions.photos.UploadProfilePhotoRequest(file)  )
             os.remove(photo)

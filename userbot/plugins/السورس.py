@@ -259,7 +259,7 @@ async def _(event):
 async def permalink(mention):
     await edit_or_reply(mention, f"""• اذا كنت تحتاج للمساعدة الرجاء الذهاب الى
 
-المطور  : @QABNADLIB
+المطور  : @SAEED5OBR
 قناة السورس  : @ghtanisaeed
 قناة معلومات القحطاني : @ghtanisaeed""")
 @iqthon.on(admin_cmd(pattern="اطفاء مؤقت( [0-9]+)?$"))

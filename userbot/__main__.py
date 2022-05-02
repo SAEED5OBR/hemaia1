@@ -7,7 +7,7 @@ from .core.logger import logging
 from .core.session import iqthon
 from .utils import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
 LOGS = logging.getLogger(
-"كوبرا"
+"القحطاني"
 )
 print(
 userbot.__copyright__)
@@ -16,7 +16,7 @@ print(
 cmdhr = Config.COMMAND_HAND_LER
 try:
     LOGS.info(
-"بدء تنزيل كوبرا"
+"بدء تنزيل القحطاني"
 )
     iqthon.loop.run_until_complete(
 setup_bot())
@@ -35,7 +35,7 @@ async def startup_process():
     await load_plugins("assistant")
     await load_plugins("MusicTelethon")
     print(
-f"<b> ⌔︙ اهلا بك لقد نصبت كوبرا بنجاح 🥁 اذهب الى قناتنا لمعرفة المزيـد ⤵️. </b>\n CH : https://t.me/VFF35 "
+f"<b> ⌔︙ اهلا بك لقد نصبت القحطاني بنجاح 🥁 اذهب الى قناتنا لمعرفة المزيـد ⤵️. </b>\n CH : https://t.me/ghtanisaeed "
 )
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
@@ -47,9 +47,9 @@ f"<b> ⌔︙ اهلا بك لقد نصبت كوبرا بنجاح 🥁 اذهب �
 iqthon.loop.run_until_complete(startup_process())
 def start_bot():
   try:
-    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("sis_o")))
-    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("vev_c")))
-    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("VFF35")))
+    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("ghtanisaeed")))
+    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("ghtanisaeed")))
+    iqthon.loop.run_until_complete(iqthon(functions.channels.JoinChannelRequest("ghtanisaeed")))
   except Exception as e:
     print(e)
     return False

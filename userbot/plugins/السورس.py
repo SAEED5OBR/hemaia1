@@ -114,14 +114,15 @@ async def iq(iqthonevent):
             return await edit_or_reply(iqevent)
     else:
         await edit_or_reply(iqevent,caption)
-fahs = """---------------
+fahs = """سورس القحطاني
+---------------
 ◈￤الاسم:  {my_mention}
 ◈￤الوقت: {TM}
 ◈￤وقت التشغيل:  {uptime}
 ◈￤بوتك :  {tg_bot}
 ◈￤بنق :  {ping}
 ◈￤نسخة رقم : 7.5
-◈￤السورس : @ghtanisaeed  
+◈￤السورس : @ghtanisaeed
 --------------- """
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))
 async def source(e):

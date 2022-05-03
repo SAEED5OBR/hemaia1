@@ -45,7 +45,7 @@ from ..helpers.utils import _catutils, _format, reply_id
 CACHE = {}
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
-async def do_pm_permit_action(event, chat):  
+async def do_pm_permit_action(event, chat):
     reply_to_id = await reply_id(event)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -104,9 +104,9 @@ async def do_pm_permit_action(event, chat):
     if custompmpermit is not None:
         USER_BOT_NO_WARN = custompmpermit.format(mention=mention,first=first,last=last,fullname=fullname,username=username,userid=userid,my_first=my_first,my_last=my_last,my_fullname=my_fullname,my_username=my_username,my_mention=my_mention,totalwarns=totalwarns,warns=warns,remwarns=remwarns)
     elif gvarstatus("pmmenu") is None:
-        USER_BOT_NO_WARN = f"⩹┉┉┉┉⊶❲𖥳 𝐒𝐈𝐅 𝐂𝐎𝐁𝐑𝐀𖥳❳⊷┉┉┉┉⩺\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐈𝐅 𝐂𝐎𝐁𝐑𝐀𖥳❳⊷┉┉┉┉⩺"
+        USER_BOT_NO_WARN = f"⩹┉┉┉┉⊶❲𖥳القحطاني𖥳❳⊷┉┉┉┉⩺\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n⩹┉┉┉┉⊶❲𖥳القحطاني𖥳❳⊷┉┉┉┉⩺"
     else:
-        USER_BOT_NO_WARN = f"⩹┉┉┉┉⊶❲𖥳 𝐒𝐈𝐅 𝐂𝐎𝐁𝐑𝐀𖥳❳⊷┉┉┉┉⩺\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐈𝐅 𝐂𝐎𝐁𝐑𝐀𖥳❳⊷┉┉┉┉⩺"
+        USER_BOT_NO_WARN = f"⩹┉┉┉┉⊶❲𖥳القحطاني𖥳❳⊷┉┉┉┉⩺\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n⩹┉┉┉┉⊶❲𖥳القحطاني𖥳❳⊷┉┉┉┉⩺"
     addgvar("pmpermit_text", USER_BOT_NO_WARN)
     PM_WARNS[str(chat.id)] += 1
     try:
@@ -492,7 +492,7 @@ async def pmpermit_on(event):
 async def pmpermit_on(event):
     input_str = event.pattern_match.group(1)
     if input_str == "ايقاف":
-        if gvarstatus("pmmenu") is None: 
+        if gvarstatus("pmmenu") is None:
             addgvar("pmmenu", "false")
             await edit_delete(event,"**⎈ ⦙   امـر الـحـمـايـة بـالـفـعـل مُـعَـطـل لـحـسـابـك 🌿**")
         else:
@@ -515,7 +515,7 @@ async def approve_p_m(event):  # sourcery no-metrics
             return
     if not reason:
         reason = "**⎈ ⦙  لـم يـذكـر 💭**"
-    try: 
+    try:
         PM_WARNS = sql.get_collection("pmwarns").json
     except AttributeError:
         PM_WARNS = {}

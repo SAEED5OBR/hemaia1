@@ -13,6 +13,6 @@
 **its simple source based on catuserbot but in arabic language !**
 __________________________
 **[wale userbot](https://t.me/ghtanisaeed)**
-**[catuserbot](https://t.me/alsonnah_alnbwiah)**
+**[QHTANI](https://t.me/alsonnah_alnbwiah)**
 __________________________
-**and thanks to telethon arab source**
+**and thanks to Qhtani source**

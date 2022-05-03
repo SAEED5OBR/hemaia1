@@ -114,15 +114,15 @@ async def iq(iqthonevent):
             return await edit_or_reply(iqevent)
     else:
         await edit_or_reply(iqevent,caption)
-fahs = """.--------------- 𓇡.
-.◈￤ الاسم  {my_mention}  𓇡.
-.◈￤ الوقت  {TM}  𓇡.
-.◈￤ وقت التشغيل  {uptime}  𓇡.
-.◈￤ بوتك  {tg_bot}  𓇡.
-.◈￤ بنق  {ping}  𓇡.
-.◈￤ نسخة رقم 7.5  𓇡.
-.◈￤ السورس  : @ghtanisaeed  𓇡.
-.--------------- 𓇡."""
+fahs = """---------------
+◈￤الاسم:  {my_mention}
+◈￤الوقت: {TM}
+◈￤وقت التشغيل:  {uptime}
+◈￤بوتك :  {tg_bot}
+◈￤بنق :  {ping}
+◈￤نسخة رقم : 7.5
+◈￤السورس : @ghtanisaeed  
+--------------- """
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))
 async def source(e):
     await edit_or_reply(e, "https://github.com/telethonAr/TelethonArab",)

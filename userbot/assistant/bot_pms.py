@@ -109,10 +109,10 @@ async def bot_start(event):
                         \n\n**⌔︙ البوت خاص بسورس :** [القحطاني](https://t.me/saeedqhtani)"
         buttons = [
             (
-                Button.url("تنصيب سورسنا", "https://heroku.com/deploy?template=https://github.com/cobarsyr/-COBRA"),
+                Button.url("تنصيب سورسنا", "https://heroku.com/deploy?template=https://github.com/SAEED5OBR/hemaia"),
                 Button.url(
-                    "كروب المساعد",
-                    "https://t.me/faqek",
+                    "قروب المساعد",
+                    "https://t.me/alsonnah_alnbwiah",
                 ),
             )
         ]

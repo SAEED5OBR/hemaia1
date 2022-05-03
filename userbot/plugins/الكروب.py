@@ -459,14 +459,14 @@ async def get_chatinfo(event):
             return None
         except ChannelPrivateError:
             await event.reply(
-                "**☭ ⦙   لا يمكنني استخدام الامر من الكروبات او القنوات الخاصة**"
+                "**☭ ⦙   لا يمكنني استخدام الامر من القروبات او القنوات الخاصة**"
             )
             return None
         except ChannelPublicGroupNaError:
             await event.reply("**☭ ⦙   لم يتم العثور على المجموعة او القناة**")
             return None
         except (TypeError, ValueError):
-            await event.reply("**☭ ⦙   رابط الكروب غير صحيح**")
+            await event.reply("**☭ ⦙   رابط القروب غير صحيح**")
             return None
     return chat_info
 
@@ -1158,7 +1158,7 @@ async def catgban(event):  # sourcery no-metrics
     if sandy == 0:
         return await edit_delete(cate, "☭ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر")
     await cate.edit(
-        f"حظر عام ل : [user](tg://user?id={user.id}) \n {len(san)} من الكروبات التي فيها انت مسؤل"
+        f"حظر عام ل : [user](tg://user?id={user.id}) \n {len(san)} من القروبات التي فيها انت مسؤل"
     )
     for i in range(sandy):
         try:
@@ -1175,11 +1175,11 @@ async def catgban(event):  # sourcery no-metrics
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) تم حظره عام : {count} من الكروبات التي فيها مشرف خلال : {cattaken} ثانيه !!\n**السبب :** `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) تم حظره عام : {count} من القروبات التي فيها مشرف خلال : {cattaken} ثانيه !!\n**السبب :** `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) تم حظره عام : {count} من الكروبات التي فيها مشرف خلال : {cattaken} ثانيه !!"
+            f"[{user.first_name}](tg://user?id={user.id}) تم حظره عام : {count} من القروبات التي فيها مشرف خلال : {cattaken} ثانيه !!"
         )
     if BOTLOG and count != 0:
         reply = await event.get_reply_message()
@@ -1191,7 +1191,7 @@ async def catgban(event):  # sourcery no-metrics
                 \n**الشخص  : **[{user.first_name}](tg://user?id={user.id})\
                 \n**الايدي  : **`{user.id}`\
                 \n**السبب  :** `{reason}`\
-                \nنحضر في : {count} كروب\
+                \nنحضر في : {count} قروب\
                 \n**خلال مده : **`{cattaken} ثانيه`",
             )
         else:
@@ -1201,7 +1201,7 @@ async def catgban(event):  # sourcery no-metrics
                 \nمعلومات الحظر :\
                 \n**الشخص  : **[{user.first_name}](tg://user?id={user.id})\
                 \n**الايدي  : **`{user.id}`\
-                \nنحضر في : {count} الكروبات\
+                \nنحضر في : {count} القروبات\
                 \n**خلال مده : **`{cattaken} ثانيه`",
             )
         try:
@@ -1231,7 +1231,7 @@ async def catgban(event):
     if sandy == 0:
         return await edit_delete(cate, "لست ادمن في هذا المجموعه او تحتاج صلاحيه حظر")
     await cate.edit(
-        f"تم الغاء الحضر عام : [user](tg://user?id={user.id}) في `{len(san)}` كروب"
+        f"تم الغاء الحضر عام : [user](tg://user?id={user.id}) في `{len(san)}` قروب"
     )
     for i in range(sandy):
         try:
@@ -1264,7 +1264,7 @@ async def catgban(event):
                 \n**الشخص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**الايدي  : **`{user.id}`\
                 \n**السبب  :** `{reason}`\
-                \nالغاء حظر العام من : {count} كروب\
+                \nالغاء حظر العام من : {count} قروب\
                 \n**خلال مده : **`{cattaken} ثانيه`",
             )
         else:
@@ -1274,7 +1274,7 @@ async def catgban(event):
                 \nمعلومات الالغاء :\
                 \n**الشخص : **[{user.first_name}](tg://user?id={user.id})\
                 \n**الايدي  : **`{user.id}`\
-                \nالغاء حظر العام من : {count} كروب\
+                \nالغاء حظر العام من : {count} قروب\
                 \n**خلال مده : **`{cattaken} ثانيه`",
             )
 @iqthon.on(admin_cmd(pattern=r"المحظورين عام$",))
@@ -1506,7 +1506,7 @@ async def set_pmlog(event):
     else:
         await event.edit("**☭ ⦙   تـخزين رسـائل الخـاص بالفـعل معـطلة ✅**")
 
-@iqthon.on(admin_cmd(pattern=r"تخزين الكروبات (تشغيل|ايقاف)$"))
+@iqthon.on(admin_cmd(pattern=r"تخزين القروبات (تشغيل|ايقاف)$"))
 async def set_grplog(event):
     "iqthon"
     input_str = event.pattern_match.group(1)
@@ -1520,15 +1520,15 @@ async def set_grplog(event):
         GRPLOG = True
     if GRPLOG:
         if h_type:
-            await event.edit("**☭ ⦙   تـخزين رسـائل الكروبات بالفـعل مُمكـنة ✅**")
+            await event.edit("**☭ ⦙   تـخزين رسـائل القروبات بالفـعل مُمكـنة ✅**")
         else:
             addgvar("GRPLOG", h_type)
-            await event.edit("**☭ ⦙   تـم تعـطيل تخـزين رسائل الكروبات بنـجاح ✅**")
+            await event.edit("**☭ ⦙   تـم تعـطيل تخـزين رسائل القروبات بنـجاح ✅**")
     elif h_type:
         addgvar("GRPLOG", h_type)
-        await event.edit("**☭ ⦙   تـم تفعيل تخـزين رسائل الكروبات بنـجاح ✅**")
+        await event.edit("**☭ ⦙   تـم تفعيل تخـزين رسائل القروبات بنـجاح ✅**")
     else:
-        await event.edit("**☭ ⦙   تـخزين رسـائل الكروبات بالفـعل معـطلة ✅**")
+        await event.edit("**☭ ⦙   تـخزين رسـائل القروبات بالفـعل معـطلة ✅**")
 
 @iqthon.on(admin_cmd(pattern=f"{LINKK} ?(.*)"))
 async def iq(SLQ):
@@ -1626,14 +1626,14 @@ async def get_chatinfo(event):
             return None
         except ChannelPrivateError:
             await event.reply(
-                "**☭ ⦙   لا يمكنني استخدام الامر من الكروبات او القنوات الخاصة**"
+                "**☭ ⦙   لا يمكنني استخدام الامر من القروبات او القنوات الخاصة**"
             )
             return None
         except ChannelPublicGroupNaError:
             await event.reply("**☭ ⦙   لم يتم العثور على المجموعة او القناة**")
             return None
         except (TypeError, ValueError):
-            await event.reply("**☭ ⦙   رابط الكروب غير صحيح**")
+            await event.reply("**☭ ⦙   رابط القروب غير صحيح**")
             return None
     return chat_info
 
@@ -1857,7 +1857,7 @@ async def _ban_person(event):
                 f"☭ ⦙   الحـظر\
                 \nالمسـتخدم: [{user.first_name}](tg://user?id={user.id})\
                 \nالـدردشـة: {event.chat.title}\
-                \nايدي الكروب(`{event.chat_id}`)\
+                \nايدي القروب(`{event.chat_id}`)\
                 \nالسبـب : {reason}",
             )
         else:

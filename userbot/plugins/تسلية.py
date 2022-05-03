@@ -2071,7 +2071,7 @@ async def iq(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه منشئ الكروب 👷‍♂️.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
+    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه منشئ القروب 👷‍♂️.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
 @iqthon.on(admin_cmd(pattern="رفع مدير(?:\s|$)([\s\S]*)"))
 async def iq(mention):
     user, custom = await get_user_from_event(mention)
@@ -2081,7 +2081,7 @@ async def iq(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه مدير الكروب 🤵‍♂️.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
+    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه مدير القروب 🤵‍♂️.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
 @iqthon.on(admin_cmd(pattern="رفع مطور(?:\s|$)([\s\S]*)"))
 async def iq(mention):
     user, custom = await get_user_from_event(mention)
@@ -2091,7 +2091,7 @@ async def iq(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه مطور الكروب 🦾.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
+    await edit_or_reply(mention, f"**🚹 ¦ المستخدم ⪼ • ** [{iqth2}](tg://user?id={user.id}) \n ☑️ **¦ تم رفعه مطور القروب 🦾.** \n**🤵‍♂️ ¦ بواسطه  :** {my_mention} ")
 @iqthon.on(admin_cmd(pattern="رفع حيوان(?:\s|$)([\s\S]*)"))
 async def iq(mention):
     user, custom = await get_user_from_event(mention)

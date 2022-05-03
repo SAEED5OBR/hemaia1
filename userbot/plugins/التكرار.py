@@ -16,7 +16,7 @@ MUQT = gvarstatus("OR_MUQT") or "مؤقت"
 
 
 async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=False):
-  
+
     counter = int(cat[0])
     if len(cat) == 2:
         spam_message = str(cat[1])
@@ -163,12 +163,12 @@ async def spammer(event):
     try:
         sleeptimet = sleeptimem = float(input_str[0])
     except Exception:
-        return await edit_delete(            event, "عذرا طريقه كتابة الأمر خطأ - شرح الارسال الوقتي او مؤقت للكروبات هنا : https://t.me/L3LL3/4483"        )
+        return await edit_delete(            event, "عذرا طريقه كتابة الأمر خطأ - شرح الارسال الوقتي او مؤقت للقروبات هنا : https://t.me/L3LL3/4483"        )
     cat = input_str[1:]
     try:
         int(cat[0])
     except Exception:
-        return await edit_delete(            event, "عذرا طريقه كتابة الأمر خطأ - شرح الارسال الوقتي او مؤقت للكروبات هنا : https://t.me/L3LL3/4483"        )
+        return await edit_delete(            event, "عذرا طريقه كتابة الأمر خطأ - شرح الارسال الوقتي او مؤقت للقروبات هنا : https://t.me/L3LL3/4483"        )
     await event.delete()
     addgvar("spamwork", True)
     await spam_function(event, reply, cat, sleeptimem, sleeptimet, DelaySpam=True)

@@ -20,7 +20,7 @@ from . import CMD_INFO, GRP_INFO, PLG_INFO, check_owner
 from .logger import logging
 LOGS = logging.getLogger(__name__)
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-CATLOGO = "https://telegra.ph/file/1bf9c1b0a084c258b1f97.jpg"
+CATLOGO = "https://up6.cc/2022/05/165152347887371.jpg"
 tr = Config.COMMAND_HAND_LER
 def getkey(val):
     for key, value in GRP_INFO.items():
@@ -39,7 +39,7 @@ def ibuild_keyboard(buttons):
     return keyb
 
 @iqthon.tgbot.on(InlineQuery)
-async def inline_handler(event):  
+async def inline_handler(event):
     builder = event.builder
     result = None
     query = event.text
@@ -300,10 +300,10 @@ async def inline_handler(event):
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/telethontesthelp/Telethon-arabb"),
+                Button.url("Source code", "https://github.com/SAEED5OBR/hemaia"),
                 Button.url(
                     "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
+                    "https://dashboard.heroku.com/new?button-url=https://github.com/SAEED5OBR/hemaia",
                 ),
             )
         ]
@@ -312,14 +312,14 @@ async def inline_handler(event):
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "iqthon.", "md"
+            "القحطاني", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="iqthon",
+            title="القحطاني",
             description="نصب لنفسك",
-            url="https://dashboard.heroku.com/new?template=https://github.com/telethon-Arab/teletho-help",
+            url="https://dashboard.heroku.com/new?template=https://github.com/SAEED5OBR/hemaia",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(

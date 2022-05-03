@@ -126,7 +126,7 @@ fahs = """سورس القحطاني
 --------------- """
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))
 async def source(e):
-    await edit_or_reply(e, "https://github.com/telethonAr/TelethonArab",)
+    await edit_or_reply(e, "https://github.com/SAEED5OBR/hemaia",)
 @iqthon.on(admin_cmd(pattern="حساب كيثاب( -l(\d+))? ([\s\S]*)"))
 async def _(event):
     reply_to = await reply_id(event)

@@ -30,10 +30,10 @@ from ..helpers import AioHttp
 from ..helpers.utils import _catutils, _format, reply_id
 LOGS = logging.getLogger(__name__)
 IQMOG = re.compile(
-    "[" 
-    "\U0001F1E0-\U0001F1FF"      "\U0001F300-\U0001F5FF"      "\U0001F600-\U0001F64F"   "\U0001F680-\U0001F6FF"  
-    "\U0001F700-\U0001F77F"      "\U0001F780-\U0001F7FF"      "\U0001F800-\U0001F8FF"     "\U0001F900-\U0001F9FF"      "\U0001FA00-\U0001FA6F"  
-    "\U0001FA70-\U0001FAFF"      "\U00002702-\U000027B0"      
+    "["
+    "\U0001F1E0-\U0001F1FF"      "\U0001F300-\U0001F5FF"      "\U0001F600-\U0001F64F"   "\U0001F680-\U0001F6FF"
+    "\U0001F700-\U0001F77F"      "\U0001F780-\U0001F7FF"      "\U0001F800-\U0001F8FF"     "\U0001F900-\U0001F9FF"      "\U0001FA00-\U0001FA6F"
+    "\U0001FA70-\U0001FAFF"      "\U00002702-\U000027B0"
     "]+")
 
 def iqtfy(inputString: str) -> str:
@@ -77,7 +77,7 @@ async def iq(iqthon):
         except YouBlockedUserError:
             await iqthon.edit("**قم بفك حظر @SpamBot للاكمال**")
             return
-        await iqthon.edit(f"~ {dontTag.message.message}")    
+        await iqthon.edit(f"~ {dontTag.message.message}")
 @iqthon.on(admin_cmd(pattern="بي دي اف ?(.*)"))
 async def _(iqthon):
     if not iqthon.reply_to_msg_id:
@@ -117,11 +117,11 @@ async def _(iqthon):
                 ],)
             await iqthon.delete()
     except TimeoutError:
-        return await iqthon.edit("**هناك خطا نعتذر**") 
+        return await iqthon.edit("**هناك خطا نعتذر**")
 @iqthon.on(admin_cmd(pattern="بوتي$"))
 async def iq(iqbot):
     TG_BOT_USERNAME = Config.TG_BOT_USERNAME
-    await iqbot.reply(f"**بوت تليثون الخاص بك : {TG_BOT_USERNAME}**")
+    await iqbot.reply(f"**بوت قحطان الخاص بك : {TG_BOT_USERNAME}**")
 @iqthon.on(admin_cmd(pattern="ملصقي ?(.*)"))
 async def iq(iqthon):
     if iqthon.fwd_from:
@@ -186,7 +186,7 @@ async def _(iqthon):
     geez = await iqthon.edit("**جاري انشاء بريد ...**")
     async with bot.conversation(chat) as conv:
         try:
-            response = conv.wait_event(events.NewMessage(                incoming=True,                from_users=220112646            )            )            
+            response = conv.wait_event(events.NewMessage(                incoming=True,                from_users=220112646            )            )
             await conv.send_message("/start")
             await asyncio.sleep(1)
             await conv.send_message("/create")
@@ -344,7 +344,7 @@ async def iq(iqthon):
     l5 = await bot.inline_query(donttag, kkno)
     await l5[0].click(iqthon.chat_id)
     await iqthon.delete()
-@iqthon.on(admin_cmd(pattern="كشف الفايروسات( -i)?$"))    
+@iqthon.on(admin_cmd(pattern="كشف الفايروسات( -i)?$"))
 async def _IQ(iqthon):
     input_str = iqthon.pattern_match.group(1)
     if not iqthon.reply_to_msg_id:
@@ -374,7 +374,7 @@ async def _IQ(iqthon):
             return await edit_or_reply(IQevent, response4.text)
         await IQevent.delete()
         await iqthon.client.send_file(iqthon.chat_id, response3.media, reply_to=(await reply_id(iqthon)))
-@iqthon.on(admin_cmd(pattern="تقويم ([\s\S]*)"))    
+@iqthon.on(admin_cmd(pattern="تقويم ([\s\S]*)"))
 async def _iq(iqthon):
     input_str = iqthon.pattern_match.group(1)
     input_sgra = input_str.split(" ")

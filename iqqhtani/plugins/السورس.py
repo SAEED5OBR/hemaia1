@@ -89,8 +89,8 @@ async def iq(iqqhtanievent):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "♛︙"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "𝗐𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𝖺𝗅 𝖺𝗋𝖺𝖻 𓃠"
-    Iqqhtani_IMG = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/e7b3ea8dc56ac781d756c.mp4"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "𝗐𝖾𝗅𝖼𝗈𝗆𝖾 TO QHTANI 𓃠"
+    Iqqhtani_IMG = gvarstatus("ALIVE_PIC") or "https://up6.cc/2022/05/165152347887371.jpg"
     tg_bot = Config.TG_BOT_USERNAME
     me = await iqqhtanievent.client.get_me()
     my_last = me.last_name

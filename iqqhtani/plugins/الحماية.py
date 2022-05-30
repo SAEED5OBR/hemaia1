@@ -90,7 +90,7 @@ async def do_pm_permit_action(event, chat):
             USER_BOT_WARN_ZERO = f" ◈ ⦙  تـم تـحـذيـرڪ مـسـبـقـاً مـن الـتـڪـرار . تـم حـظـرڪ ، لا يـمـڪـنـڪ ازعـاج الـمـالـڪ !**"
         msg = await event.reply(USER_BOT_WARN_ZERO)
         await event.client(functions.contacts.BlockRequest(chat.id))
-        the_message = f" ◈ ⦙  الـمـحـضـوريـن مـن الـخـاص : 📩**\n♛ ⦙   [{get_display_name(chat)}](tg://user?id={chat.id}) **تـم حـظـر الـمـسـتـخـدم .🗣🚫** \n ◈ ⦙   عـدد الـرسـائـل :** {PM_WARNS[str(chat.id)]}"
+        the_message = f" ◈ ⦙  الـمـحـضـوريـن مـن الـخـاص : 📩**\n◈ ⦙   [{get_display_name(chat)}](tg://user?id={chat.id}) **تـم حـظـر الـمـسـتـخـدم .🗣🚫** \n ◈ ⦙   عـدد الـرسـائـل :** {PM_WARNS[str(chat.id)]}"
         del PM_WARNS[str(chat.id)]
         sql.del_collection("pmwarns")
         sql.del_collection("pmmessagecache")
@@ -104,9 +104,9 @@ async def do_pm_permit_action(event, chat):
     if custompmpermit is not None:
         USER_BOT_NO_WARN = custompmpermit.format(mention=mention,first=first,last=last,fullname=fullname,username=username,userid=userid,my_first=my_first,my_last=my_last,my_fullname=my_fullname,my_username=my_username,my_mention=my_mention,totalwarns=totalwarns,warns=warns,remwarns=remwarns)
     elif gvarstatus("pmmenu") is None:
-        USER_BOT_NO_WARN = f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧᵗᵉˡᵉᵗʰᵒᶰ ᵃʳᵃᵇˢ‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧᵗᵉˡᵉᵗʰᵒᶰ ᵃʳᵃᵇˢ‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+        USER_BOT_NO_WARN = f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧالقحطاني‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧالقحطاني‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
     else:
-        USER_BOT_NO_WARN = f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧᵗᵉˡᵉᵗʰᵒᶰ ᵃʳᵃᵇˢ‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧᵗᵉˡᵉᵗʰᵒᶰ ᵃʳᵃᵇˢ‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+        USER_BOT_NO_WARN = f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧالقحطاني‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n\n❞ هـاﺂ هـݪـو٘ {mention} ❝ 🦋\nاﻧـا آݪان ﻣـﺷـغٓول ݪاتࢪﺳـݪ ݪي ࢪﺳـآئݪ ڪﺛـيࢪه وآݪآ سيٰتم حٓـظٍـࢪڪ فقـط قـࢦ سـبب مجـيٰـئڪ اوَ حٰٖـآِجٰتـڪِٰ ، عٰٖـنِ٘ـدمـا آﻋـۅد سِ٘أوافـق علـى ﻣحٰٖـآِډثـتِـك  .. ❞ \n ⤶ ❨  `{warns}/{totalwarns}` ❩\n\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧالقحطاني‌ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
     addgvar("pmpermit_text", USER_BOT_NO_WARN)
     PM_WARNS[str(chat.id)] += 1
     try:
@@ -189,7 +189,7 @@ async def do_pm_enquire_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  .🌀 \n ♛ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه .. \n ♛ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
+        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  .🌀 \n ◈ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه .. \n ◈ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -228,7 +228,7 @@ async def do_pm_request_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  🌀. \n ♛ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه . . \n ♛ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
+        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  🌀. \n ◈ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه . . \n ◈ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -265,7 +265,7 @@ async def do_pm_chat_action(event, chat):
     except AttributeError:
         PMMESSAGE_CACHE = {}
     if str(chat.id) not in PM_WARNS:
-        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  🌀. \n ♛ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه . . \n ♛ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
+        text = " ◈ ⦙  يـرجـى الانـتـظـار لــ حـيـن قرائة رسالتك  🌀. \n ◈ ⦙   مـالـڪ الـحـسـاب سَــوف يـرد عـلـيـڪ عـنـد اسـتـطـاعـتـه . . \n ◈ ⦙   يـرجـى عـدم تـڪـرار الـرسـائـل لـتـجـنـب الـحـظـر 🙂🌿**"
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
         sql.del_collection("pmwarns")
@@ -444,7 +444,7 @@ async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
         text = " ◈ ⦙   عـذرا ، هـذه الـخـيـارات لـلـمـسـتـخـدم الـذي يـراسـلـك 🧸♥️**"
         return await event.answer(text, cache_time=0, alert=True)
-    text = " ◈ ⦙   بـالـطـبـع يـمـكـنـك الـتـحـدث مـع مـالـك الـحـسـاب لـكـن لـيـس الان  🤍\n♛ ⦙   نـسـتـطـيـع الـتـكـلـم فـي \n♛ ⦙   وقـت اخـر حـالـيـا انـا مـشـغـول قـلـيـلاً  - عـنـد تـفـرغـي سـأكـلـمـك هـذا اكـيــد .💭♥️**"
+    text = " ◈ ⦙   بـالـطـبـع يـمـكـنـك الـتـحـدث مـع مـالـك الـحـسـاب لـكـن لـيـس الان  🤍\n◈ ⦙   نـسـتـطـيـع الـتـكـلـم فـي \n◈ ⦙   وقـت اخـر حـالـيـا انـا مـشـغـول قـلـيـلاً  - عـنـد تـفـرغـي سـأكـلـمـك هـذا اكـيــد .💭♥️**"
     sqllist.add_to_list("pmchat", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -535,7 +535,7 @@ async def approve_p_m(event):  # sourcery no-metrics
             sqllist.rm_from_list("pmenquire", chat.id)
         if str(chat.id) in sqllist.get_collection_list("pmoptions"):
             sqllist.rm_from_list("pmoptions", chat.id)
-        await edit_delete(event, f"♛ ⦙    [{user.first_name}](tg://user?id={user.id})\n ◈ ⦙   تـم السـمـاح لـه بـأرسـال الـرسـائـل 💬✔️** \n  ◈ ⦙   الـسـبـب ❔  :** {reason}")
+        await edit_delete(event, f"◈ ⦙    [{user.first_name}](tg://user?id={user.id})\n ◈ ⦙   تـم السـمـاح لـه بـأرسـال الـرسـائـل 💬✔️** \n  ◈ ⦙   الـسـبـب ❔  :** {reason}")
         try:
             PMMESSAGE_CACHE = sql.get_collection("pmmessagecache").json
         except AttributeError:
@@ -551,7 +551,7 @@ async def approve_p_m(event):  # sourcery no-metrics
         sql.add_collection("pmwarns", PM_WARNS, {})
         sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
     else:
-        await edit_delete(event, f"[{user.first_name}](tg://user?id={user.id}) \n ♛ ⦙   هـو بـالـفـعل فـي قـائـمـة الـسـمـاح ✅")
+        await edit_delete(event, f"[{user.first_name}](tg://user?id={user.id}) \n ◈ ⦙   هـو بـالـفـعل فـي قـائـمـة الـسـمـاح ✅")
 @iqqhtani.on(admin_cmd(pattern="(ر|رفض)(?:\s|$)([\s\S]*)"))
 async def disapprove_p_m(event):
     if gvarstatus("pmpermit") is None:
@@ -575,7 +575,7 @@ async def disapprove_p_m(event):
         pmpermit_sql.disapprove(user.id)
         await edit_or_reply(event, f"[{user.first_name}](tg://user?id={user.id})\n ◈ ⦙   تـم رفـضـه مـن أرسـال الـرسـائـل ⚠️**\n ◈ ⦙   الـسـبـب ❔  :** {reason}")
     else:
-        await edit_delete(event, f"[{user.first_name}](tg://user?id={user.id})\n ** ♛ ⦙   لــم يـتـم الـمـوافـقـة عـلـيـه مـسـبـقـاً ❕ **")
+        await edit_delete(event, f"[{user.first_name}](tg://user?id={user.id})\n ** ◈ ⦙   لــم يـتـم الـمـوافـقـة عـلـيـه مـسـبـقـاً ❕ **")
 @iqqhtani.on(admin_cmd(pattern="مرفوض(?:\s|$)([\s\S]*)"))
 async def block_p_m(event):
     if gvarstatus("pmpermit") is None:
@@ -633,10 +633,10 @@ async def approve_p_m(event):
     if gvarstatus("pmpermit") is None:
         return await edit_delete(event,f" ◈ ⦙   يــجـب تـفـعـيـل امـر الحـمـايـة أولاً بـأرســال ** {cmdhd} الـحماية تشغيل  لـتـفـعـيـل هـذا الأمـر .⚠️❕",)
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "♛ ⦙  قـائـمـة الـمـسـمـوح لـهم الـحـالـيـة : 🔰 \n\n"
+    APPROVED_PMs = "◈ ⦙  قـائـمـة الـمـسـمـوح لـهم الـحـالـيـة : 🔰 \n\n"
     if len(approved_users) > 0:
         for user in approved_users:
             APPROVED_PMs += f"• 👤 {_format.mentionuser(user.first_name , user.user_id)}\n ◈ ⦙   الأيــدي :** `{user.user_id}`\n ◈ ⦙   الـمـعـرف:** @{user.username}\n ◈ ⦙   الـتـاريـخ :** {user.date}\n ◈ ⦙   الـسـبـب:** {user.reason}\n\n"
     else:
-        APPROVED_PMs = "♛ ⦙   لـم تـوافـق عـلـى أي شـخـص مـسـبـقـاً ⁉️"
-    await edit_or_reply(event, APPROVED_PMs, file_name="قائـمة الحـماية.txt", caption="♛ ⦙  قـائـمـة الـمـسـمـوح لـهم الـحـالـيـة : 🔰 \n سـورس القحطاني   \n @Iqqhtani")
+        APPROVED_PMs = "◈ ⦙   لـم تـوافـق عـلـى أي شـخـص مـسـبـقـاً ⁉️"
+    await edit_or_reply(event, APPROVED_PMs, file_name="قائـمة الحـماية.txt", caption="◈ ⦙  قـائـمـة الـمـسـمـوح لـهم الـحـالـيـة : 🔰 \n سـورس القحطاني   \n @Iqqhtani")

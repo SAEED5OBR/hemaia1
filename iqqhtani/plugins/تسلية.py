@@ -1907,7 +1907,7 @@ async def iq(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(kno)
-    await edit_or_reply(mention, f"♛︙ نـسـبتكم انـت و [{iqth}](tg://user?id={user.id}) هـي {iqt} 😔🖤")
+    await edit_or_reply(mention, f"◈︙ نـسـبتكم انـت و [{iqth}](tg://user?id={user.id}) هـي {iqt} 😔🖤")
 @iqqhtani.on(admin_cmd(pattern="نسبه الانوثه(?:\s|$)([\s\S]*)"))
 async def iq(mention):
     user, custom = await get_user_from_event(mention)
@@ -1917,7 +1917,7 @@ async def iq(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبه الانوثه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤰")
+    await edit_or_reply(mention, f"◈︙ نسبه الانوثه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤰")
 @iqqhtani.on(admin_cmd(pattern="نسبه الغباء(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -1927,7 +1927,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبه الغباء لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 😂💔")
+    await edit_or_reply(mention, f"◈︙ نسبه الغباء لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 😂💔")
 @iqqhtani.on(admin_cmd(pattern="نسبه الانحراف(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -1937,7 +1937,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبة الانحراف لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🥵🖤")
+    await edit_or_reply(mention, f"◈︙ نسبة الانحراف لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🥵🖤")
 @iqqhtani.on(admin_cmd(pattern="نسبه المثليه(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -1947,7 +1947,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبه المثليه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤡 🏳️‍🌈.")
+    await edit_or_reply(mention, f"◈︙ نسبه المثليه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤡 🏳️‍🌈.")
 @iqqhtani.on(admin_cmd(pattern="نسبه النجاح(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -1955,7 +1955,7 @@ async def permalink(mention):
         return
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبه النجاح لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤓.")
+    await edit_or_reply(mention, f"◈︙ نسبه النجاح لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤓.")
 @iqqhtani.on(admin_cmd(pattern="نسبه الكراهيه(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -1965,7 +1965,7 @@ async def permalink(mention):
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(arb)
-    await edit_or_reply(mention, f"♛︙ نسبه الكراهيه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤮.")
+    await edit_or_reply(mention, f"◈︙ نسبه الكراهيه لـ [{iqth}](tg://user?id={user.id}) هـي {iqt} 🤮.")
 async def get_user(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()

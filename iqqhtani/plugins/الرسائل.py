@@ -112,7 +112,7 @@ async def gcast(event):
         return edit_or_reply(event, " ◈ ⦙   يجـب وضـع نـص مع الامـر للتوجيـه**")
     tt = event.text
     msg = tt[6:]
-    event = await edit_or_reply(event, "** ♛ ⦙   يتـم الـتوجيـة للـمجموعـات انتـظر قليلا**")
+    event = await edit_or_reply(event, "** ◈ ⦙   يتـم الـتوجيـة للـمجموعـات انتـظر قليلا**")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -123,7 +123,7 @@ async def gcast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await event.edit(f"♛ ⦙   تـم بنـجـاح فـي {done} من الـدردشـات , خطـأ فـي {er} من الـدردشـات")
+    await event.edit(f"◈ ⦙   تـم بنـجـاح فـي {done} من الـدردشـات , خطـأ فـي {er} من الـدردشـات")
 async def getTranslate(text, **kwargs):
     translator = Translator()
     result = None
@@ -160,10 +160,10 @@ async def gucast(event):
         return await edit_or_reply(event, "هـذا الامـر مقـيد ")
     xx = event.pattern_match.group(1)
     if not xx:
-        return edit_or_reply(event, "** ♛ ⦙   يجـب وضـع نـص مع الامـر للتوجيـه**")
+        return edit_or_reply(event, "** ◈ ⦙   يجـب وضـع نـص مع الامـر للتوجيـه**")
     tt = event.text
     msg = tt[7:]
-    await edit_or_reply(event, "** ♛ ⦙   يتـم الـتوجيـة للخـاص انتـظر قليلا**")
+    await edit_or_reply(event, "** ◈ ⦙   يتـم الـتوجيـة للخـاص انتـظر قليلا**")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -174,7 +174,7 @@ async def gucast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await event.edit(f"♛ ⦙   تـم بنـجـاح فـي {done} من الـدردشـات , خطـأ فـي {er} من الـدردشـات")
+    await event.edit(f"◈ ⦙   تـم بنـجـاح فـي {done} من الـدردشـات , خطـأ فـي {er} من الـدردشـات")
 async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=False):
     counter = int(cat[0])
     if len(cat) == 2:
@@ -214,14 +214,14 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
     if DelaySpam is not True:
         if BOTLOG:
             if event.is_private:
-                await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التڪـرار  ♽**\n" + f" ◈ ⦙   تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"♛ ⦙   `{spam_message}`")
+                await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التڪـرار  ♽**\n" + f" ◈ ⦙   تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"◈ ⦙   `{spam_message}`")
             else:
-                await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التڪـرار  ♽**\n" + f" ◈ ⦙   تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"♛ ⦙   `{spam_message}`")
+                await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التڪـرار  ♽**\n" + f" ◈ ⦙   تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"◈ ⦙   `{spam_message}`")
     elif BOTLOG:
         if event.is_private:
-            await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التكرار الوقتي 💢**\n" + f" ◈ ⦙   تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n" + f"♛ ⦙   `{spam_message}`")
+            await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التكرار الوقتي 💢**\n" + f" ◈ ⦙   تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n" + f"◈ ⦙   `{spam_message}`")
         else:
-            await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التكرار الوقتي 💢**\n" + f" ◈ ⦙   تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"♛ ⦙   `{spam_message}`")
+            await event.client.send_message(BOTLOG_CHATID, " ◈ ⦙   التكرار الوقتي 💢**\n" + f" ◈ ⦙   تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"◈ ⦙   `{spam_message}`")
 @iqqhtani.on(admin_cmd(pattern="كتابه وهمي(?:\s|$)([\s\S]*)"))
 async def _iq(iqqhtani):
     iq = iqqhtani.pattern_match.group(1)
@@ -245,7 +245,7 @@ async def spammer(event):
     try:
         counter = int(cat[0])
     except Exception:
-        return await edit_delete(event, "♛ ⦙  إستخـدم بناء الجملة المناسب للإزعاج، صيغة Foe تشير إلىٰ قائمة التعليمات 💡")
+        return await edit_delete(event, "◈ ⦙  إستخـدم بناء الجملة المناسب للإزعاج، صيغة Foe تشير إلىٰ قائمة التعليمات 💡")
     if counter > 50:
         sleeptimet = 0.5
         sleeptimem = 1
@@ -322,11 +322,11 @@ async def save_welcome(event):
     msg_id = None
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
-            await event.client.send_message(BOTLOG_CHATID, f"♛ ⦙  رسالة الترحيب 🔖 : \n♛ ⦙  ايدي الدردشة 🆔 : {event.chat_id}\n♛ ⦙  يتم حفظ الرسالة التالية كملاحظة ترحيبية لـ 🔖 : {event.chat.title}, ")
+            await event.client.send_message(BOTLOG_CHATID, f"◈ ⦙  رسالة الترحيب 🔖 : \n◈ ⦙  ايدي الدردشة 🆔 : {event.chat_id}\n◈ ⦙  يتم حفظ الرسالة التالية كملاحظة ترحيبية لـ 🔖 : {event.chat.title}, ")
             msg_o = await event.client.forward_messages(entity=BOTLOG_CHATID, messages=msg, from_peer=event.chat_id, silent=True)
             msg_id = msg_o.id
         else:
-            return await edit_or_reply(event, "♛ ⦙   حفظ الصورة كرسالة ترحيبية يتطلب وضع الفار لـ  BOTLOG_CHATID ")
+            return await edit_or_reply(event, "◈ ⦙   حفظ الصورة كرسالة ترحيبية يتطلب وضع الفار لـ  BOTLOG_CHATID ")
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
@@ -336,7 +336,7 @@ async def save_welcome(event):
     rm_welcome_setting(event.chat_id)
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("updated"))
-    await edit_or_reply("♛ ⦙  حدث خطأ أثناء وضع ترحيب في هذه المجموعة ⚠️")
+    await edit_or_reply("◈ ⦙  حدث خطأ أثناء وضع ترحيب في هذه المجموعة ⚠️")
 @iqqhtani.on(admin_cmd(pattern="مسح الترحيبات(?: |$)(.*)"))
 async def del_welcome(event):
     if rm_welcome_setting(event.chat_id) is True:
@@ -373,7 +373,7 @@ async def del_welcome(event):
 async def gps(event):
     reply_to_id = await reply_id(event)
     input_str = event.pattern_match.group(1)
-    catevent = await edit_or_reply(event, "** ♛ ⦙   جاري العثـور على الموقع  … **")
+    catevent = await edit_or_reply(event, "** ◈ ⦙   جاري العثـور على الموقع  … **")
     geolocator = Nominatim(user_agent="catiqqhtani")
     geoloc = geolocator.geocode(input_str)
     if geoloc:
@@ -385,7 +385,7 @@ async def gps(event):
             caption=f" ◈ ⦙   الموقـع 𖠕  : **`{input_str}`", reply_to=reply_to_id)
         await catevent.delete()
     else:
-        await catevent.edit("♛ ⦙   عـذراً، لـم أستطـع إيجـاده  ⚠️")
+        await catevent.edit("◈ ⦙   عـذراً، لـم أستطـع إيجـاده  ⚠️")
 async def ocr_iqqhtani(filename, overlay=False,api_key="K88942796188957", language="eng"):
     payload = {"isOverlayRequired": overlay,"apikey": api_key,"language": language}
     with open(filename, "rb") as f:
@@ -431,7 +431,7 @@ async def echo(event):
     try:
         addecho(chat_id, user_id, chat_name, user_name, user_username, chat_type)
     except Exception as e:
-        await edit_delete(catevent, f"♛ ⦙   Error:\n`{str(e)}`")
+        await edit_delete(catevent, f"◈ ⦙   Error:\n`{str(e)}`")
     else:
         await edit_or_reply(catevent, " ◈ ⦙   تـم تفعـيل امـر التقليد علـى هذا الشـخص**\n  ◈ ⦙   سـيتم تقليـد جميع رسائلـه هـنا**")
 @iqqhtani.on(admin_cmd(pattern="الغاء الازعاج( -a)?"))
@@ -548,7 +548,7 @@ async def iq(cloneiq):
                     elif ty == "s":
                         error += f"\n ◈ ⦙   هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
                     else:
-                        error += f"\n\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                        error += f"\n\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
             else:
                 count += 1
                 async for msg in cloneiq.client.iter_messages(cloneiq.chat_id, limit=(int(input_str) - 1), offset_id=reply.id, reverse=True):
@@ -585,9 +585,9 @@ async def iq(cloneiq):
                 if msgs:
                     await cloneiq.client.delete_messages(chat, msgs)
             else:
-                error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :** "
+                error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :** "
         elif input_str:
-            error += f"\n♛ ⦙   **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+            error += f"\n◈ ⦙   **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         elif p_type is not None:
             for ty in p_type:
                 if ty in Tnsmeet:
@@ -600,7 +600,7 @@ async def iq(cloneiq):
                     if msgs:
                         await cloneiq.client.delete_messages(chat, msgs)
                 else:
-                    error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                    error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         else:
             async for msg in cloneiq.client.iter_messages(chat, min_id=cloneiq.reply_to_msg_id - 1 ):
                 count += 1
@@ -625,7 +625,7 @@ async def iq(cloneiq):
                 elif ty == "s":
                     error += f"\n ◈ ⦙   لا تستطـيع استـخدام امر التنظيف عبر البحث مع الاضافه 🔎**"
                 else:
-                    error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                    error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         elif p_type == "s":
             try:
                 cont, inputstr = input_str.split(" ")
@@ -651,7 +651,7 @@ async def iq(cloneiq):
             if msgs:
                 await cloneiq.client.delete_messages(chat, msgs)
         else:
-            error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+            error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
     elif p_type is not None:
         for ty in p_type:
             if ty in Tnsmeet:
@@ -667,7 +667,7 @@ async def iq(cloneiq):
             elif ty == "s":
                 error += f"\n ◈ ⦙   لا تستطـيع استـخدام امر التنظيف عبر البحث مع الاضافه 🔎**"
             else:
-                error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
     elif input_str.isnumeric():
         async for msg in cloneiq.client.iter_messages(chat, limit=int(input_str) + 1):
             count += 1
@@ -682,7 +682,7 @@ async def iq(cloneiq):
     if msgs:
         await cloneiq.client.delete_messages(chat, msgs)
     if count > 0:
-        result += "♛ ⦙   تـم الأنتـهاء من التـنظيف السـريع  ✅  \n ♛ ⦙   لقـد  تـم حـذف \n  ♛ ⦙   عـدد  " + str(count) + " من الـرسائـل 🗑️"
+        result += "◈ ⦙   تـم الأنتـهاء من التـنظيف السـريع  ✅  \n ◈ ⦙   لقـد  تـم حـذف \n  ◈ ⦙   عـدد  " + str(count) + " من الـرسائـل 🗑️"
     if error != "":
         result += f"\n\n ◈ ⦙  عـذرا هنـاك خطـأ ❌:**{error}"
     if result == "":
@@ -883,12 +883,12 @@ async def _(event):
 @iqqhtani.on(admin_cmd(pattern="تحذير تكرار(?:\s|$)([\s\S]*)"))
 async def _(event):
     input_str = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "♛ ⦙  جـاري تحديـث إعـدادات الـ كملها ↯")
+    event = await edit_or_reply(event, "◈ ⦙  جـاري تحديـث إعـدادات الـ كملها ↯")
     await asyncio.sleep(2)
     try:
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
-        await event.edit(f"♛ ⦙  تم تحديـث تحذير تكرار إلى : {input_str} في الدردشـة الحاليـة ⌂")
+        await event.edit(f"◈ ⦙  تم تحديـث تحذير تكرار إلى : {input_str} في الدردشـة الحاليـة ⌂")
     except Exception as e:
         await event.edit(str(e))
 @iqqhtani.on(admin_cmd(pattern="ترجمه ([\s\S]*)"))
@@ -957,7 +957,7 @@ async def _(event):
     else:
         markdown_note = "".join(event.text.split(maxsplit=1)[1:])
     if not markdown_note:
-        return await edit_delete(event, " ◈ ⦙  مـا هـو النـص الـذي يجـب أن أستخدمـه ␦** : \n♛ ⦙   أولا قـم بكتابه الامر وبجانبه الكلمه ورابط\n♛ ⦙   كمثال 👇 :\n♛ ⦙   `.ماركدون شفافية اهلا بك في كوكل [google]<buttonurl:https://www.google.com>`")
+        return await edit_delete(event, " ◈ ⦙  مـا هـو النـص الـذي يجـب أن أستخدمـه ␦** : \n◈ ⦙   أولا قـم بكتابه الامر وبجانبه الكلمه ورابط\n◈ ⦙   كمثال 👇 :\n◈ ⦙   `.ماركدون شفافية اهلا بك في كوكل [google]<buttonurl:https://www.google.com>`")
     catinput = "Inline buttons " + markdown_note
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, catinput)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
@@ -994,7 +994,7 @@ async def iq(cloneiq):
                     elif ty == "s":
                         error += f"\n ◈ ⦙   هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
                     else:
-                        error += f"\n\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                        error += f"\n\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
             else:
                 count += 1
                 async for msg in cloneiq.client.iter_messages(cloneiq.chat_id, limit=(int(input_str) - 1), offset_id=reply.id, reverse=True):
@@ -1031,9 +1031,9 @@ async def iq(cloneiq):
                 if msgs:
                     await cloneiq.client.delete_messages(chat, msgs)
             else:
-                error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :** "
+                error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :** "
         elif input_str:
-            error += f"\n♛ ⦙   **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+            error += f"\n◈ ⦙   **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         elif p_type is not None:
             for ty in p_type:
                 if ty in Tnsmeet1:
@@ -1046,7 +1046,7 @@ async def iq(cloneiq):
                     if msgs:
                         await cloneiq.client.delete_messages(chat, msgs)
                 else:
-                    error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                    error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         else:
             async for msg in cloneiq.client.iter_messages(chat, min_id=cloneiq.reply_to_msg_id - 1 ):
                 count += 1
@@ -1071,7 +1071,7 @@ async def iq(cloneiq):
                 elif ty == "s":
                     error += f"\n ◈ ⦙   لا تستطـيع استـخدام امر التنظيف عبر البحث مع الاضافه 🔎**"
                 else:
-                    error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                    error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
         elif p_type == "s":
             try:
                 cont, inputstr = input_str.split(" ")
@@ -1097,7 +1097,7 @@ async def iq(cloneiq):
             if msgs:
                 await cloneiq.client.delete_messages(chat, msgs)
         else:
-            error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+            error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
     elif p_type is not None:
         for ty in p_type:
             if ty in Tnsmeet1:
@@ -1113,7 +1113,7 @@ async def iq(cloneiq):
             elif ty == "s":
                 error += f"\n ◈ ⦙   لا تستطـيع استـخدام امر التنظيف عبر البحث مع الاضافه 🔎**"
             else:
-                error += f"\n♛ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
+                error += f"\n◈ ⦙   `{ty}`  **هنـاك خطـا فـي تركـيب الجمـلة 🔩 :**"
     elif input_str.isnumeric():
         async for msg in cloneiq.client.iter_messages(chat, limit=int(input_str) + 1):
             count += 1
@@ -1128,7 +1128,7 @@ async def iq(cloneiq):
     if msgs:
         await cloneiq.client.delete_messages(chat, msgs)
     if count > 0:
-        result += "♛ ⦙   تـم الأنتـهاء من التـنظيف السـريع  ✅  \n ♛ ⦙   لقـد  تـم حـذف \n  ♛ ⦙   عـدد  " + str(count) + " من الـرسائـل 🗑️"
+        result += "◈ ⦙   تـم الأنتـهاء من التـنظيف السـريع  ✅  \n ◈ ⦙   لقـد  تـم حـذف \n  ◈ ⦙   عـدد  " + str(count) + " من الـرسائـل 🗑️"
     if error != "":
         result += f"\n\n ◈ ⦙  عـذرا هنـاك خطـأ ❌:**{error}"
     if result == "":
@@ -1159,7 +1159,7 @@ async def iq(iqqhtani):
     mentions = iqqhtani.text[8:]
     chat = await iqqhtani.get_input_chat()
     async for x in iqqhtani.client.iter_participants(chat, 200):
-        mentions += f" \n♛ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉"
+        mentions += f" \n◈ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉"
     await iqqhtani.client.send_message(iqqhtani.chat_id, mentions)
     await iqqhtani.delete()
 @iqqhtani.on(admin_cmd(pattern="تاك 150(?: |$)(.*)"))
@@ -1167,7 +1167,7 @@ async def iq(iqqhtani):
     mentions = iqqhtani.text[8:]
     chat = await iqqhtani.get_input_chat()
     async for x in iqqhtani.client.iter_participants(chat, 150):
-        mentions += f" \n♛ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
+        mentions += f" \n◈ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
     await iqqhtani.client.send_message(iqqhtani.chat_id, mentions)
     await iqqhtani.delete()
 @iqqhtani.on(admin_cmd(pattern="تاك 100(?: |$)(.*)"))
@@ -1175,7 +1175,7 @@ async def iq(iqqhtani):
     mentions = iqqhtani.text[8:]
     chat = await iqqhtani.get_input_chat()
     async for x in iqqhtani.client.iter_participants(chat, 100):
-        mentions += f" \n♛ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
+        mentions += f" \n◈ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
     await iqqhtani.client.send_message(iqqhtani.chat_id, mentions)
     await iqqhtani.delete()
 @iqqhtani.on(admin_cmd(pattern="تاك 50(?: |$)(.*)"))
@@ -1183,7 +1183,7 @@ async def iq(iqqhtani):
     mentions = iqqhtani.text[8:]
     chat = await iqqhtani.get_input_chat()
     async for x in iqqhtani.client.iter_participants(chat, 50):
-        mentions += f" \n♛ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
+        mentions += f" \n◈ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
     await iqqhtani.client.send_message(iqqhtani.chat_id, mentions)
     await iqqhtani.delete()
 @iqqhtani.on(admin_cmd(pattern="تاك 10(?: |$)(.*)"))
@@ -1191,7 +1191,7 @@ async def iq(iqqhtani):
     mentions = iqqhtani.text[8:]
     chat = await iqqhtani.get_input_chat()
     async for x in iqqhtani.client.iter_participants(chat, 10):
-        mentions += f" \n ♛ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
+        mentions += f" \n ◈ ⦙ ⵧ〈[{x.first_name}](tg://user?id={x.id})〉 \n"
     await iqqhtani.client.send_message(iqqhtani.chat_id, mentions)
     await iqqhtani.delete()
 @iqqhtani.on(admin_cmd(pattern="احسب ([\s\S]*)"))
@@ -1385,7 +1385,7 @@ async def iq(msg1):
             try:
                 await iq_src.delete()
                 if BOTLOG:
-                    await msg1.client.send_message(BOTLOG_CHATID, " ◈ ⦙   حـذف الـرسائل 🗳️  \n ♛ ⦙   تـم حـذف الـرسالة بـنجاح ✅**")
+                    await msg1.client.send_message(BOTLOG_CHATID, " ◈ ⦙   حـذف الـرسائل 🗳️  \n ◈ ⦙   تـم حـذف الـرسالة بـنجاح ✅**")
             except rpcbaseerrors.BadRequestError:
                 if BOTLOG:
                     await msg1.client.send_message(BOTLOG_CHATID, " ◈ ⦙  عـذرا لايـمكن الـحذف بـدون  صلاحيـات ألاشـراف ⚜️**")
@@ -1397,7 +1397,7 @@ async def iq(msg1):
                 await iq_src.delete()
                 await msg1.delete()
                 if BOTLOG:
-                    await msg1.client.send_message(BOTLOG_CHATID, " ◈ ⦙   حـذف الـرسائل 🗳️  \n ♛ ⦙   تـم حـذف الـرسالة بـنجاح ✅**")
+                    await msg1.client.send_message(BOTLOG_CHATID, " ◈ ⦙   حـذف الـرسائل 🗳️  \n ◈ ⦙   تـم حـذف الـرسالة بـنجاح ✅**")
             except rpcbaseerrors.BadRequestError:
                 await edit_or_reply(msg1, " ◈ ⦙   عـذرا  لا استـطيع حـذف الرسـالة. ⁉️**")
     elif not input_str:

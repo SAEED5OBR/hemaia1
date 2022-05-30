@@ -1174,7 +1174,7 @@ if 1 == 1:
 async def _(event):
     result = await event.client(GetAdminedPublicChannelsRequest())
     output_str = " ◈ ⦙  جميع القنوات والمجموعات التي قمت بإنشائها  💠  :**\n"
-    output_str += "".join(f"♛ ⦙    - {channel_obj.title} @{channel_obj.username} \n"
+    output_str += "".join(f"◈ ⦙    - {channel_obj.title} @{channel_obj.username} \n"
         for channel_obj in result.chats)
     await edit_or_reply(event, output_str)
 @iqqhtani.on(admin_cmd(pattern="ملكيه ([\s\S]*)"))
@@ -1249,7 +1249,7 @@ async def _(event):
     await event.client(functions.account.UpdateProfileRequest(last_name=blank))
     await edit_delete(event, " ◈ ⦙  تمّـت إعـادة حسـابك بنجـاح ✓**")
     if BOTLOG:
-        await event.client.send_message(            BOTLOG_CHATID, f"♛ ⦙   **الأعـادة ♲ :**\n ◈ ⦙   تـم إعـادة ضبـط حسـابك إلـى وضعـه الطبيـعي بـنجاح ✓**"        )
+        await event.client.send_message(            BOTLOG_CHATID, f"◈ ⦙   **الأعـادة ♲ :**\n ◈ ⦙   تـم إعـادة ضبـط حسـابك إلـى وضعـه الطبيـعي بـنجاح ✓**"        )
 
 
 async def fetch_info(replied_user, event):
@@ -1649,7 +1649,7 @@ async def _(event):
     await autoname_loop()
 @iqqhtani.on(admin_cmd(pattern=f"{OR_AUTOBIO}(?: |$)(.*)"))
 async def _(event):
-    "♛ ⦙  يحـدّث البايـو مع الوقـت 💡"
+    "◈ ⦙  يحـدّث البايـو مع الوقـت 💡"
     if gvarstatus(f"{OR_AUTOBIO}") is not None and gvarstatus(f"{OR_AUTOBIO}") == "true":
         return await edit_delete(event, f" ◈ ⦙  البايـو الوقتـي قيـد التشغيـل بالفعـل !**")
     addgvar(f"{OR_AUTOBIO}", True)
@@ -2341,7 +2341,7 @@ async def _(event):  # sourcery no-metrics
         return await edit_delete(event, " ◈ ⦙  لم يتـم تفعيـل البايـو التلقائـي ✕**")
     END_CMDS = [f"{OR_FOTOAUTO}", f"{OR_NAMEAUTO}", f"{OR_AUTOBIO}",]
     if input_str not in END_CMDS:
-        await edit_delete(            event,            f"♛ ⦙   {input_str} أمـر الإنهـاء غيـر صالـح، اذڪـر بوضـوح ما يجـب أن أنهـي !",            parse_mode=_format.parse_pre        )
+        await edit_delete(            event,            f"◈ ⦙   {input_str} أمـر الإنهـاء غيـر صالـح، اذڪـر بوضـوح ما يجـب أن أنهـي !",            parse_mode=_format.parse_pre        )
 iqqhtani.loop.create_task(digitalpicloop())
 iqqhtani.loop.create_task(autoname_loop())
 iqqhtani.loop.create_task(autobio_loop())

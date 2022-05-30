@@ -76,9 +76,9 @@ from pytz import timezone as tz
 from . import hmention
 
 LOGS = logging.getLogger(__name__)
-SONG_SEARCH_STRING = "♛ ⦙ جاري البحث عن الاغنية إنتظر رجاءًا  🎧"
-SONG_NOT_FOUND = "♛ ⦙ لم أستطع إيجاد هذه الأغنية  ⚠️"
-SONG_SENDING_STRING = "♛ ⦙ قم بإلغاء حظر البوت  🚫"
+SONG_SEARCH_STRING = "◈ ⦙ جاري البحث عن الاغنية إنتظر رجاءًا  🎧"
+SONG_NOT_FOUND = "◈ ⦙ لم أستطع إيجاد هذه الأغنية  ⚠️"
+SONG_SENDING_STRING = "◈ ⦙ قم بإلغاء حظر البوت  🚫"
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36"
@@ -196,7 +196,7 @@ async def ytdl_down(event, opts, url):
         await event.edit(" ◈ ⦙  الوسائط غير متوفرة بالتنسيق المطلوب ⚠️**")
         return None
     except XAttrMetadataError as XAME:
-        await event.edit(f"♛ ⦙  `{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        await event.edit(f"◈ ⦙  `{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return None
     except ExtractorError:
         await event.edit(" ◈ ⦙  حدث خطأ أثناء استخراج المعلومات يرجى وضعها بشكل صحيح ❗️**")
@@ -354,7 +354,7 @@ async def collage(event):
 @iqqhtani.on(admin_cmd(pattern=r"رابط تطبيق ([\s\S]*)"))
 async def app_search(event):
     app_name = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "♛ ⦙ جـاري البحـث ↯")
+    event = await edit_or_reply(event, "◈ ⦙ جـاري البحـث ↯")
     try:
         remove_space = app_name.split(" ")
         final_name = "+".join(remove_space)
@@ -394,13 +394,13 @@ async def app_search(event):
         app_details = "<a href='" + app_icon + "'>📲&#8203;</a>"
         app_details += " <b>" + app_name + "</b>"
         app_details += (
-            "\n\n<code>♛ ⦙ المطـور :</code> <a href='"
+            "\n\n<code>◈ ⦙ المطـور :</code> <a href='"
             + app_dev_link
             + "'>"
             + app_dev
             + "</a>"
         )
-        app_details += "\n<code>♛ ⦙ التقييـم :</code> " + app_rating.replace(
+        app_details += "\n<code>◈ ⦙ التقييـم :</code> " + app_rating.replace(
             "Rated ", "⭐ "
         ).replace(" out of ", "/").replace(" stars", "", 1).replace(
             " stars", "⭐ "
@@ -408,16 +408,16 @@ async def app_search(event):
             "five", "5"
         )
         app_details += (
-            "\n<code>♛ ⦙ المميـزات :</code> <a href='"
+            "\n<code>◈ ⦙ المميـزات :</code> <a href='"
             + app_link
-            + "'>♛ ⦙ مشاهدتـه في سـوق بلـي 🝧</a>"
+            + "'>◈ ⦙ مشاهدتـه في سـوق بلـي 🝧</a>"
         )
         app_details += f"\n\n===> {ALIVE_NAME} <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit(" ◈ ⦙ لم يتـم العثـور على نتيجـة، الرجـاء إدخـال إسـم تطبيـق صالـح ⚠️**")
     except Exception as err:
-        await event.edit("♛ ⦙ حـدث استثنـاء ⌭ :" + str(err))
+        await event.edit("◈ ⦙ حـدث استثنـاء ⌭ :" + str(err))
 
 @iqqhtani.on(events.NewMessage(outgoing=False, pattern=r'العمر ?(.*)'))
 async def RequestAge(event):
@@ -470,9 +470,9 @@ async def time_func(tdata):
     dtnow1 = dt.now(tz(time_zone)).strftime(t_form)
     dtnow2 = dt.now(tz(time_zone)).strftime(d_form)
     if c_name != Config.COUNTRY:
-        await edit_or_reply(tdata, f"♛ ⦙  ألوقـت 🕛 :  {dtnow1} علـى {dtnow2}  فـي {c_name} ({time_zone} الـوقت العـالمي 🌍 .")
+        await edit_or_reply(tdata, f"◈ ⦙  ألوقـت 🕛 :  {dtnow1} علـى {dtnow2}  فـي {c_name} ({time_zone} الـوقت العـالمي 🌍 .")
     if Config.COUNTRY:
-        await edit_or_reply(tdata, f"♛ ⦙  ألوقـت 🕛  : {dtnow1} على {dtnow2}  هنـا فـي 🏷️ :  {Config.COUNTRY}" f"({time_zone} الـوقت العـالمي 🌍 .")
+        await edit_or_reply(tdata, f"◈ ⦙  ألوقـت 🕛  : {dtnow1} على {dtnow2}  هنـا فـي 🏷️ :  {Config.COUNTRY}" f"({time_zone} الـوقت العـالمي 🌍 .")
 @iqqhtani.on(admin_cmd(pattern="وقتي(?:\s|$)([\s\S]*)"))
 async def _(event):
     reply_msg_id = await reply_id(event)
@@ -536,16 +536,16 @@ async def corona(event):
         hmm1 = country_data["confirmed"] + country_data["new_cases"]
         hmm2 = country_data["deaths"] + country_data["new_deaths"]
         data = ""
-        data += f"\n♛ ⦙  الاصابات المؤكده 😟 : <code>{hmm1}</code>"
-        data += f"\n♛ ⦙  الاصابات المشبوهه 🥺 : <code>{country_data['active']}</code>"
-        data += f"\n♛ ⦙  الوفيات ⚰️ : <code>{hmm2}</code>"
-        data += f"\n♛ ⦙  الحرجه 😔 : <code>{country_data['critical']}</code>"
-        data += f"\n♛ ⦙  حالات الشفاء 😊 : <code>{country_data['recovered']}</code>"
-        data += f"\n♛ ⦙  اجمالي الاختبارات 📊 : <code>{country_data['total_tests']}</code>"
-        data += f"\n♛ ⦙  الاصابات الجديده 🥺 : <code>{country_data['new_cases']}</code>"
-        data += f"\n♛ ⦙  الوفيات الجديده ⚰️ : <code>{country_data['new_deaths']}</code>"
+        data += f"\n◈ ⦙  الاصابات المؤكده 😟 : <code>{hmm1}</code>"
+        data += f"\n◈ ⦙  الاصابات المشبوهه 🥺 : <code>{country_data['active']}</code>"
+        data += f"\n◈ ⦙  الوفيات ⚰️ : <code>{hmm2}</code>"
+        data += f"\n◈ ⦙  الحرجه 😔 : <code>{country_data['critical']}</code>"
+        data += f"\n◈ ⦙  حالات الشفاء 😊 : <code>{country_data['recovered']}</code>"
+        data += f"\n◈ ⦙  اجمالي الاختبارات 📊 : <code>{country_data['total_tests']}</code>"
+        data += f"\n◈ ⦙  الاصابات الجديده 🥺 : <code>{country_data['new_cases']}</code>"
+        data += f"\n◈ ⦙  الوفيات الجديده ⚰️ : <code>{country_data['new_deaths']}</code>"
         await catevent.edit(
-            "<b>♛ ⦙  معلومـات فـايروس كـورونا. 💉 لـ {}:{}</b>".format(country, data),
+            "<b>◈ ⦙  معلومـات فـايروس كـورونا. 💉 لـ {}:{}</b>".format(country, data),
             parse_mode="html",
         )
     else:
@@ -555,13 +555,13 @@ async def corona(event):
             cat2 = int(data["new_death"]) - int(data["death"])
             cat3 = int(data["new_cured"]) - int(data["cured"])
             result = f"<b>Corona virus info of {data['state_name']}\
-                \n♛ ⦙  الاصابات المؤكده 😟 : <code>{data['new_positive']}</code>\
-                \n♛ ⦙  الاصابات المشبوهه 🥺 : <code>{data['new_active']}</code>\
-                \n♛ ⦙  الوفيات ⚰️ : <code>{data['new_death']}</code>\
-                \n♛ ⦙  حالات الشفاء 😊 : <code>{data['new_cured']}</code>\
-                \n♛ ⦙  اجمالي الاختبارات 📊  : <code>{cat1}</code>\
-                \n♛ ⦙  الاصابات الجديده 🥺 : <code>{cat2}</code>\
-                \n♛ ⦙  الوفيات الجديده ⚰️ : <code>{cat3}</code> </b>"
+                \n◈ ⦙  الاصابات المؤكده 😟 : <code>{data['new_positive']}</code>\
+                \n◈ ⦙  الاصابات المشبوهه 🥺 : <code>{data['new_active']}</code>\
+                \n◈ ⦙  الوفيات ⚰️ : <code>{data['new_death']}</code>\
+                \n◈ ⦙  حالات الشفاء 😊 : <code>{data['new_cured']}</code>\
+                \n◈ ⦙  اجمالي الاختبارات 📊  : <code>{cat1}</code>\
+                \n◈ ⦙  الاصابات الجديده 🥺 : <code>{cat2}</code>\
+                \n◈ ⦙  الوفيات الجديده ⚰️ : <code>{cat3}</code> </b>"
             await catevent.edit(result, parse_mode="html")
         else:
             await edit_delete(catevent, " ◈ ⦙  معلومـات فـايروس كـورونا. 💉  \n  فـي بـلد  - {} غـير مـوجودة ❌**".format(country),
@@ -852,9 +852,9 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         OUTPUT_STR = """{img_size}
-<b>♛ ⦙ بحـث ممڪـن ذو صلـة 🜉  : </b> <a href="{prs_url}">{prs_text}</a>
-<b>♛ ⦙ مزيـد من المعلومـات 🝰 : </b> إفتـح هـذا ␥ <a href="{the_location}">Link</a>
-<i>♛ ⦙ تم الجلـب في {ms} ثانيـة ⏱</i>""".format(
+<b>◈ ⦙ بحـث ممڪـن ذو صلـة 🜉  : </b> <a href="{prs_url}">{prs_text}</a>
+<b>◈ ⦙ مزيـد من المعلومـات 🝰 : </b> إفتـح هـذا ␥ <a href="{the_location}">Link</a>
+<i>◈ ⦙ تم الجلـب في {ms} ثانيـة ⏱</i>""".format(
             **locals()
         )
     else:
@@ -1169,7 +1169,7 @@ async def video_catfile(event):  # sourcery no-metrics
     if mediatype == "Round Video":
         return await edit_delete(
             event,
-            "♛ ⦙ الوسائـط التي تم الـرد عليهـا هـي بالفعـل في شڪـل دائـري، أعـد التحـقق !",
+            "◈ ⦙ الوسائـط التي تم الـرد عليهـا هـي بالفعـل في شڪـل دائـري، أعـد التحـقق !",
         )
     if mediatype not in ["Photo", "Audio", "Voice", "Gif", "Sticker", "Video"]:
         return await edit_delete(event, " ◈ ⦙ لم يتـم العثـور على وسائـط مدعومـة !**")
@@ -1502,7 +1502,7 @@ async def _(event):  # sourcery no-metrics
         return await edit_or_reply(event, " ◈ ⦙ هـذا ليـس ملصـق متحرك  !**")
     catevent = await edit_or_reply(
         event,
-        "♛ ⦙ جـاري تحويـل هـذا الملصـق إلى صـورة متحرڪـة، قـد يستغـرق هـذا بضـع دقائـق ✦",
+        "◈ ⦙ جـاري تحويـل هـذا الملصـق إلى صـورة متحرڪـة، قـد يستغـرق هـذا بضـع دقائـق ✦",
         parse_mode=_format.parse_pre,
     )
     try:

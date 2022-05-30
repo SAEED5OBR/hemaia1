@@ -149,7 +149,7 @@ async def do_pm_options_action(event, chat):
         PMMESSAGE_CACHE = sql.get_collection("pmmessagecache").json
     except AttributeError:
         PMMESSAGE_CACHE = {}
-    if event.sender_id == 1226408155:
+    if event.sender_id == 427628975:
             return
     if str(chat.id) not in PM_WARNS:
         text = " ◈ ⦙  اخـتـࢪ احـد الخـيـاࢪات فـي الأعـلى بـلا تـڪـࢪاࢪ ، وهـذا تـحـذيـࢪڪ الاخـيـࢪ !❕🤍**"

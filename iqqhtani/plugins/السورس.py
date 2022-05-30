@@ -412,9 +412,9 @@ async def variable(var):
             return await ics.edit("⌔ .set var `<ConfigVars-name> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await ics.edit("**⌔ تم تغيـر** `{}` **:**\n **- المتغير :** `{}` \n**- يتم الان اعـادة تشغيـل بـوت تليثـون يستغـرق الامر 2-1 دقيقـه ▬▭ ...**".format(variable, value))
+            await ics.edit("**⌔ تم تغيـر** `{}` **:**\n **- المتغير :** `{}` \n**- يتم الان اعـادة تشغيـل بـوت القحطاني يستغـرق الامر 2-1 دقيقـه ▬▭ ...**".format(variable, value))
         else:
-            await ics.edit("**⌔ تم اضافه** `{}` **:** \n**- المضاف اليه :** `{}` \n**يتم الان اعـادة تشغيـل بـوت تليثـون يستغـرق الامر 2-1 دقيقـه ▬▭ ...**".format(variable, value))
+            await ics.edit("**⌔ تم اضافه** `{}` **:** \n**- المضاف اليه :** `{}` \n**يتم الان اعـادة تشغيـل بـوت القحطاني يستغـرق الامر 2-1 دقيقـه ▬▭ ...**".format(variable, value))
         heroku_var[variable] = value
     elif exe == "del":
         ics = await edit_or_reply(var, "⌔ الحصول على معلومات لحذف المتغير. ")
@@ -426,7 +426,7 @@ async def variable(var):
         if variable not in heroku_var:
             return await ics.edit(f"⌔ `{variable}`**  غير موجود**")
 
-        await ics.edit(f"**⌔** `{variable}`  **تم حذفه بنجاح. \n**يتم الان اعـادة تشغيـل بـوت تليثـون يستغـرق الامر 2-1 دقيقـه ▬▭ ...**")
+        await ics.edit(f"**⌔** `{variable}`  **تم حذفه بنجاح. \n**يتم الان اعـادة تشغيـل بـوت القحطاني يستغـرق الامر 2-1 دقيقـه ▬▭ ...**")
         del heroku_var[variable]
 @iqqhtani.tgbot.on(CallbackQuery(data=re.compile(rb"order1")))
 @check_owner

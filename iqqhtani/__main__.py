@@ -44,7 +44,7 @@ f"<b> ⌔︙ اهلا بك لقد نصبت القحطاني بنجاح 🥁 اذ
 iqqhtani.loop.run_until_complete(startup_process())
 def start_bot():
   try:
-      List = ["iqqhtani","uruur","tttuu","TelethonMusic"]
+      List = ["iqqhtani","saeedqhtani","ghtanisaeed"]
       for id in List :
           iqqhtani.loop.run_until_complete(iqqhtani(functions.channels.JoinChannelRequest(id)))
   except Exception as e:

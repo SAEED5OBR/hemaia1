@@ -14,8 +14,8 @@ LOGS = logging.getLogger("Iqqhtani")
 bot = iqqhtani
 StartTime = time.time()
 catversion = "7.6"
-if Config.UPSTREAM_REPO == "TelethonAr":
-    UPSTREAM_REPO_URL = "https://github.com/telethonArab/telethonAr"
+if Config.UPSTREAM_REPO == "QHTANI":
+    UPSTREAM_REPO_URL = "https://github.com/SAEED5OBR/hemaia1"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 if Config.PRIVATE_GROUP_BOT_API_ID == 0:

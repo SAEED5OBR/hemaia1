@@ -125,10 +125,10 @@ fahs = """◈ : me  {my_mention}  𓇡.
 ◈ : My Bot  {tg_bot}  𓇡.
 ◈ : ping  {ping}  𓇡.
 ◈ : version 7.6  𓇡.
-◈ : Source QHTANI : @iqqhtani  𓇡."""
+◈ : Source QHTANI : @ghtanisaeed  𓇡."""
 @iqqhtani.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))
 async def source(e):
-    await edit_or_reply(e, "hhttps://github.com/SAEED5OBR/hemaia",)
+    await edit_or_reply(e, "https://github.com/SAEED5OBR/hemaia",)
 @iqqhtani.on(admin_cmd(pattern="حساب كيثاب( -l(\d+))? ([\s\S]*)"))
 async def _(event):
     reply_to = await reply_id(event)

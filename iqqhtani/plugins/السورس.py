@@ -665,7 +665,7 @@ async def inlineiqqhtani(iqqhtani):
 async def iq(event):
     await edit_or_reply(event,
 """ **
-❨ Order telethon Arab  ❩
+❨ اوامر سورس القحطاني  ❩
 ———————×———————
 ♛  اوامر السورس ↢ ( .م1 )
 ♛  اوامر الحساب ↢ ( .م2 )

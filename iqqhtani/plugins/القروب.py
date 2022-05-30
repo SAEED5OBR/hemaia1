@@ -134,7 +134,7 @@ NO_ADMIN = " ◈ ⦙  أنا لست مشرف هنا ** ."
 NO_PERM = " ◈ ⦙  ليس لدي أذونات كافية  🚮** ."
 CHAT_PP_CHANGED = " ◈ ⦙  تغيّرت صورة الدردشة  🌅** ."
 INVALID_MEDIA = " ◈ ⦙ ملحق غير صالح  📳** ."
-IMOGE_Iqqhtani = "♛ ⦙  "
+IMOGE_Iqqhtani = "◈ ⦙  "
 NO_ADMIN = " ◈ ⦙ عذرا لست ادمن هنا **"
 NO_PERM = " ◈ ⦙ ليس لدي صلاحيات ادمن كافية! **"
 
@@ -636,73 +636,73 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         for _ in bots_list:
             bots += 1
 
-    caption = "<b>♛ ⦙  معلومـات الدردشـة  🝢 :</b>\n"
-    caption += f"♛ ⦙  الآيـدي  : <code>{chat_obj_info.id}</code>\n"
+    caption = "<b>◈ ⦙  معلومـات الدردشـة  🝢 :</b>\n"
+    caption += f"◈ ⦙  الآيـدي  : <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
-        caption += f"♛ ⦙  إسـم المجموعـة  :{chat_title}\n"
+        caption += f"◈ ⦙  إسـم المجموعـة  :{chat_title}\n"
     if former_title is not None:  # Meant is the very first title
-        caption += f"♛ ⦙  الإسم السابـق  : {former_title}\n"
+        caption += f"◈ ⦙  الإسم السابـق  : {former_title}\n"
     if username is not None:
-        caption += f"♛ ⦙  نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
-        caption += f"♛ ⦙  الرابـط  : \n {username}\n"
+        caption += f"◈ ⦙  نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
+        caption += f"◈ ⦙  الرابـط  : \n {username}\n"
     else:
-        caption += f"♛ ⦙   نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
+        caption += f"◈ ⦙   نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
     if creator_username is not None:
-        caption += f"♛ ⦙   المالـك  :  {creator_username}\n"
+        caption += f"◈ ⦙   المالـك  :  {creator_username}\n"
     elif creator_valid:
-        caption += ('♛ ⦙   المالـك  : <a href="tg://user?id={creator_id}">{creator_firstname}</a>\n')
+        caption += ('◈ ⦙   المالـك  : <a href="tg://user?id={creator_id}">{creator_firstname}</a>\n')
     if created is not None:
-        caption += f"♛ ⦙  تاريـخ الإنشـاء  : \n <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
+        caption += f"◈ ⦙  تاريـخ الإنشـاء  : \n <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
-        caption += f"♛ ⦙  الإنتـاج  :   <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-    caption += f"♛ ⦙  آيـدي قاعـدة البيانـات : {dc_id}\n"
+        caption += f"◈ ⦙  الإنتـاج  :   <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
+    caption += f"◈ ⦙  آيـدي قاعـدة البيانـات : {dc_id}\n"
     if exp_count is not None:
         chat_level = int((1 + sqrt(1 + 7 * exp_count / 14)) / 2)
-        caption += f"♛ ⦙  الأعضـاء : <code>{chat_level}</code>\n"
+        caption += f"◈ ⦙  الأعضـاء : <code>{chat_level}</code>\n"
     if messages_viewable is not None:
-        caption += f"♛ ⦙  الرسائـل التي يمڪن مشاهدتها : <code>{messages_viewable}</code>\n"
+        caption += f"◈ ⦙  الرسائـل التي يمڪن مشاهدتها : <code>{messages_viewable}</code>\n"
     if messages_sent:
-        caption += f"♛ ⦙  الرسائـل المرسلـة  :<code>{messages_sent}</code>\n"
+        caption += f"◈ ⦙  الرسائـل المرسلـة  :<code>{messages_sent}</code>\n"
     elif messages_sent_alt:
-        caption += f"♛ ⦙  الرسـائل المرسلة: <code>{messages_sent_alt}</code> {warn_emoji}\n"
+        caption += f"◈ ⦙  الرسـائل المرسلة: <code>{messages_sent_alt}</code> {warn_emoji}\n"
     if members is not None:
-        caption += f"♛ ⦙  الأعضـاء : <code>{members}</code>\n"
+        caption += f"◈ ⦙  الأعضـاء : <code>{members}</code>\n"
     if admins is not None:
-        caption += f"♛ ⦙  المشرفيـن : <code>{admins}</code>\n"
+        caption += f"◈ ⦙  المشرفيـن : <code>{admins}</code>\n"
     if bots_list:
-        caption += f"♛ ⦙  البـوتات : <code>{bots}</code>\n"
+        caption += f"◈ ⦙  البـوتات : <code>{bots}</code>\n"
     if members_online:
-        caption += f"♛ ⦙  المتصليـن حـالياً : <code>{members_online}</code>\n"
+        caption += f"◈ ⦙  المتصليـن حـالياً : <code>{members_online}</code>\n"
     if restrcited_users is not None:
-        caption += f"♛ ⦙  الأعضـاء المقيّديـن : <code>{restrcited_users}</code>\n"
+        caption += f"◈ ⦙  الأعضـاء المقيّديـن : <code>{restrcited_users}</code>\n"
     if banned_users is not None:
-        caption += f"♛ ⦙  الأعضـاء المحظوريـن : <code>{banned_users}</code>"
+        caption += f"◈ ⦙  الأعضـاء المحظوريـن : <code>{banned_users}</code>"
     if group_stickers is not None:
-        caption += f'{chat_type} ♛ ⦙  الملصقـات : <a href="t.me/addstickers/{chat.full_chat.stickerset.short_name}">{group_stickers}</a>'
+        caption += f'{chat_type} ◈ ⦙  الملصقـات : <a href="t.me/addstickers/{chat.full_chat.stickerset.short_name}">{group_stickers}</a>'
     caption += "\n"
     if not broadcast:
-        caption += f"♛ ⦙  الوضـع البطيئ : {slowmode}"
+        caption += f"◈ ⦙  الوضـع البطيئ : {slowmode}"
         if (
             hasattr(chat_obj_info, "slowmode_enabled")
             and chat_obj_info.slowmode_enabled):
             caption += f", <code>{slowmode_time}s</code>\n"
         else:
             caption += "\n"
-        caption += f"♛ ⦙  الـمجموعـة الخارقـة  : {supergroup}\n"
+        caption += f"◈ ⦙  الـمجموعـة الخارقـة  : {supergroup}\n"
     if hasattr(chat_obj_info, "restricted"):
-        caption += f"♛ ⦙  المقيّـد : {restricted}"
+        caption += f"◈ ⦙  المقيّـد : {restricted}"
         if chat_obj_info.restricted:
             caption += f"> : {chat_obj_info.restriction_reason[0].platform}\n"
-            caption += f"> ♛ ⦙  السـبب  : {chat_obj_info.restriction_reason[0].reason}\n"
-            caption += f"> ♛ ⦙  النّـص  : {chat_obj_info.restriction_reason[0].text}\n\n"
+            caption += f"> ◈ ⦙  السـبب  : {chat_obj_info.restriction_reason[0].reason}\n"
+            caption += f"> ◈ ⦙  النّـص  : {chat_obj_info.restriction_reason[0].text}\n\n"
         else:
             caption += "\n"
     if hasattr(chat_obj_info, "scam") and chat_obj_info.scam:
-        caption += "♛ ⦙  السارقيـن : <b>Yes</b>\n"
+        caption += "◈ ⦙  السارقيـن : <b>Yes</b>\n"
     if hasattr(chat_obj_info, "verified"):
-        caption += f"♛ ⦙  الحسابـات الموثقـة   : {verified}\n"
+        caption += f"◈ ⦙  الحسابـات الموثقـة   : {verified}\n"
     if description:
-        caption += f"♛ ⦙  الوصـف  : \n<code>{description}</code>\n"
+        caption += f"◈ ⦙  الوصـف  : \n<code>{description}</code>\n"
     return caption
 
 @iqqhtani.on(admin_cmd(pattern=f"{addition} ?(.*)"))
@@ -727,18 +727,18 @@ async def iq(event):
             if error.startswith("Too"):
                 return (
                     await kno.edit(
-                        f" ◈ ⦙   حـالة الأضـافة انتـهت مـع الأخـطاء**\n- (**ربـما هـنالك ضغـط عـلى الأمر حاول مجـدا لاحقـا **) \n ◈ ⦙   الـخطأ ** : \n`{error}`\n\n♛ ⦙   اضالـة `{s}` \n♛ ⦙   خـطأ بأضافـة `{f}`"
+                        f" ◈ ⦙   حـالة الأضـافة انتـهت مـع الأخـطاء**\n- (**ربـما هـنالك ضغـط عـلى الأمر حاول مجـدا لاحقـا **) \n ◈ ⦙   الـخطأ ** : \n`{error}`\n\n◈ ⦙   اضالـة `{s}` \n◈ ⦙   خـطأ بأضافـة `{f}`"
                     ),
                 )
             await event.client(
                 functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
             )
             s = s + 1
-            await kno.edit(f" ◈ ⦙   تتـم الأضـافة :**\n\n♛ ⦙   اضـيف `{s}` \n♛ ⦙    خـطأ بأضافـة `{f}` \n\n ◈ ⦙   × اخـر خـطأ:** `{error}`")
+            await kno.edit(f" ◈ ⦙   تتـم الأضـافة :**\n\n◈ ⦙   اضـيف `{s}` \n◈ ⦙    خـطأ بأضافـة `{f}` \n\n ◈ ⦙   × اخـر خـطأ:** `{error}`")
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await kno.edit(f" ◈ ⦙   اڪتـملت الأضافـة ✅** : \n\n♛ ⦙   تـم بنجـاح اضافـة `{s}` \n♛ ⦙   خـطأ بأضافـة `{f}`")
+    return await kno.edit(f" ◈ ⦙   اڪتـملت الأضافـة ✅** : \n\n◈ ⦙   تـم بنجـاح اضافـة `{s}` \n◈ ⦙   خـطأ بأضافـة `{f}`")
 
 @iqqhtani.on(admin_cmd(pattern=f"{TFLASH}(.*)"))
 async def _(event):
@@ -824,7 +824,7 @@ async def rm_deletedacc(show):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_delete(show, "♛ ⦙  أنـا لسـت مشـرفـاً هنـا !", 5)
+        await edit_delete(show, "◈ ⦙  أنـا لسـت مشـرفـاً هنـا !", 5)
         return
     event = await edit_or_reply(show, " ◈ ⦙  جـاري حـذف الحسـابات المحذوفـة ⌯**")
     del_u = 0
@@ -849,8 +849,8 @@ async def rm_deletedacc(show):
         await show.client.send_message(
             BOTLOG_CHATID,
             f" ◈ ⦙  تنظيف :**\
-            \n♛ ⦙   {del_status}\
-            \n*♛ ⦙  المحادثـة ⌂** {show.chat.title}(`{show.chat_id}`)",
+            \n◈ ⦙   {del_status}\
+            \n*◈ ⦙  المحادثـة ⌂** {show.chat.title}(`{show.chat_id}`)",
         )
 
 @iqqhtani.on(admin_cmd(pattern=r"احصائيات الاعضاء ?([\s\S]*)"))
@@ -960,28 +960,28 @@ async def _(event):  # sourcery no-metrics
             n += 1
     if input_str:
         required_string = """ ◈ ⦙   الـمطرودين {} / {} الأعـضاء
-♛ ⦙   الحـسابـات المـحذوفة: {}
-♛ ⦙   حـالة المستـخدم الفـارغه: {}
-♛ ⦙   اخر ظهور منذ شـهر: {}
-♛ ⦙   اخر ظـهور منـذ اسبوع: {}
-♛ ⦙   غير متصل: {}
-♛ ⦙   المستخدمين النشطون: {}
-♛ ⦙   اخر ظهور قبل قليل: {}
-♛ ⦙   البوتات: {}
-♛ ⦙   مـلاحظة: {}**"""
+◈ ⦙   الحـسابـات المـحذوفة: {}
+◈ ⦙   حـالة المستـخدم الفـارغه: {}
+◈ ⦙   اخر ظهور منذ شـهر: {}
+◈ ⦙   اخر ظـهور منـذ اسبوع: {}
+◈ ⦙   غير متصل: {}
+◈ ⦙   المستخدمين النشطون: {}
+◈ ⦙   اخر ظهور قبل قليل: {}
+◈ ⦙   البوتات: {}
+◈ ⦙   مـلاحظة: {}**"""
         await et.edit(required_string.format(c, p, d, y, m, w, o, q, r, b, n))
         await sleep(5)
     await et.edit(
 """ ◈ ⦙   : {} مـجموع المـستخدمين
-♛ ⦙   الحـسابـات المـحذوفة: {}
-♛ ⦙   حـالة المستـخدم الفـارغه: {}
-♛ ⦙   اخر ظهور منذ شـهر: {}
-♛ ⦙   اخر ظـهور منـذ اسبوع: {}
-♛ ⦙   غير متصل: {}
-♛ ⦙   المستخدمين النشطون: {}
-♛ ⦙   اخر ظهور قبل قليل: {}
-♛ ⦙   البوتات: {}
-♛ ⦙   مـلاحظة: {} **""".format(            p, d, y, m, w, o, q, r, b, n        )    )
+◈ ⦙   الحـسابـات المـحذوفة: {}
+◈ ⦙   حـالة المستـخدم الفـارغه: {}
+◈ ⦙   اخر ظهور منذ شـهر: {}
+◈ ⦙   اخر ظـهور منـذ اسبوع: {}
+◈ ⦙   غير متصل: {}
+◈ ⦙   المستخدمين النشطون: {}
+◈ ⦙   اخر ظهور قبل قليل: {}
+◈ ⦙   البوتات: {}
+◈ ⦙   مـلاحظة: {} **""".format(            p, d, y, m, w, o, q, r, b, n        )    )
 
 def weird_division(n, d):
     return n / d if d else 0
@@ -1063,10 +1063,10 @@ async def tmuter(event):  # sourcery no-metrics
                 )
         # Announce to logging group
     except UserIdInvalidError:
-        return await catevent.edit("♛ ⦙  أنك لست مسؤولاً  فتأكد ان لديك صلاحيه حذف الرسائل")
+        return await catevent.edit("◈ ⦙  أنك لست مسؤولاً  فتأكد ان لديك صلاحيه حذف الرسائل")
     except UserAdminInvalidError:
         return await catevent.edit(
-            "♛ ⦙  أنك لست مسؤولاً  فتأكد ان لديك صلاحيه حذف الرسائل"
+            "◈ ⦙  أنك لست مسؤولاً  فتأكد ان لديك صلاحيه حذف الرسائل"
         )
     except Exception as e:
         return await catevent.edit(f"`{e}`")
@@ -1079,7 +1079,7 @@ async def tban(event):  # sourcery no-metrics
     if not user:
         return
     if not reason:
-        return await catevent.edit("♛ ⦙ رجاء طريقه كتابه الامر خاطئه قم بروئيه قناه شروحات الاوامر : @l3ll3")
+        return await catevent.edit("◈ ⦙ رجاء طريقه كتابه الامر خاطئه قم بروئيه قناه شروحات الاوامر : @l3ll3")
     reason = reason.split(" ", 1)
     hmm = len(reason)
     cattime = reason[0].strip()
@@ -1088,7 +1088,7 @@ async def tban(event):  # sourcery no-metrics
     if not ctime:
         return
     if user.id == event.client.uid:
-        return await catevent.edit("♛ ⦙ عذرا لايمكنني حظر نفسي")
+        return await catevent.edit("◈ ⦙ عذرا لايمكنني حظر نفسي")
     await catevent.edit("!")
     try:
         await event.client(
@@ -1100,7 +1100,7 @@ async def tban(event):  # sourcery no-metrics
         )
     except UserAdminInvalidError:
         return await catevent.edit(
-            "♛ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر"
+            "◈ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر"
         )
     except BadRequestError:
         return await catevent.edit(NO_PERM)
@@ -1110,7 +1110,7 @@ async def tban(event):  # sourcery no-metrics
             await reply.delete()
     except BadRequestError:
         return await catevent.edit(
-            "♛ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر"
+            "◈ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر"
         )
     if reason:
         await catevent.edit(
@@ -1158,7 +1158,7 @@ async def catgban(event):  # sourcery no-metrics
     count = 0
     sandy = len(san)
     if sandy == 0:
-        return await edit_delete(cate, "♛ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر")
+        return await edit_delete(cate, "◈ ⦙ إما أنك لست مسؤولاً أو أنك حاولت حظر مسؤول لم تقم بترقيته فتأكد ان لديك صلاحيه الحظر")
     await cate.edit(
         f"حظر عام ل : [user](tg://user?id={user.id}) \n {len(san)} من القروبات التي فيها انت مسؤل"
     )
@@ -1327,13 +1327,13 @@ async def _(event):  # sourcery no-metrics
         chatdata = await event.client.get_entity(entity)
     except Exception as e:
         return await edit_delete(
-            event, f"<b>♛ ⦙  خطـأ ⚠️ : </b><code>{str(e)}</code>", 5, parse_mode="HTML"
+            event, f"<b>◈ ⦙  خطـأ ⚠️ : </b><code>{str(e)}</code>", 5, parse_mode="HTML"
         )
     try:
         userdata = await event.client.get_entity(userentity)
     except Exception as e:
         return await edit_delete(
-            event, f"<b>♛ ⦙  خطـأ ⚠️ : </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
+            event, f"<b>◈ ⦙  خطـأ ⚠️ : </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
         )
     if type(chatdata).__name__ == "Channel":
         if chatdata.username:
@@ -1344,7 +1344,7 @@ async def _(event):  # sourcery no-metrics
         link = f"<a href='tg://user?id={chatdata.id}'>{chatdata.first_name}</a>"
     catevent = await edit_or_reply(
         event,
-        f"<code>♛ ⦙  حسـاب عـدد الملفـات وحجـم الملـف حسـب ✦ </code>{_format.htmlmentionuser(userdata.first_name,userdata.id)}<code> in Group </code><b>{link}</b>\n<code>This may take some time also depends on number of user messages</code>",
+        f"<code>◈ ⦙  حسـاب عـدد الملفـات وحجـم الملـف حسـب ✦ </code>{_format.htmlmentionuser(userdata.first_name,userdata.id)}<code> in Group </code><b>{link}</b>\n<code>This may take some time also depends on number of user messages</code>",
         parse_mode="HTML",
     )
 
@@ -1392,17 +1392,17 @@ async def _(event):  # sourcery no-metrics
         str(round((weird_division((endtime - starttime), totalcount)) * 1000, 2))
         + " ms"
     )
-    totalstring = f"<code><b> ♛ ⦙  إجمالـي الملفـات ✦ : </b>       | {str(totalcount)}\
-                  \n <b> ♛ ⦙  الحجـم الإجمالـي للملـف ✦ : </b>   | {humanbytes(totalsize)}\
+    totalstring = f"<code><b> ◈ ⦙  إجمالـي الملفـات ✦ : </b>       | {str(totalcount)}\
+                  \n <b> ◈ ⦙  الحجـم الإجمالـي للملـف ✦ : </b>   | {humanbytes(totalsize)}\
                   \n <b> حجم الملف  : </b>    | {avghubytes}\
                   \n</code>"
-    runtimestring = f"<code><b> ♛ ⦙  وقـت التشغيـل ✦ :</b>            | {runtime}\
+    runtimestring = f"<code><b> ◈ ⦙  وقـت التشغيـل ✦ :</b>            | {runtime}\
                     \n <b> وقـت التشغيـل لڪل ملـف ✦ :</b>   | {avgruntime}\
                     \n</code>"
     line = "<code>+--------------------+-----------+</code>\n"
-    result = f"<b>♛ ⦙  المجموعـة ✦ : {link}\nUser : {_format.htmlmentionuser(userdata.first_name,userdata.id)}\n\n"
-    result += f"<code><b>♛ ⦙  مجمـوع الرسائـل ✦ :</b> {msg_count}</code>\n"
-    result += "<b>♛ ⦙  ملخـص الملـف ✦ : </b>\n"
+    result = f"<b>◈ ⦙  المجموعـة ✦ : {link}\nUser : {_format.htmlmentionuser(userdata.first_name,userdata.id)}\n\n"
+    result += f"<code><b>◈ ⦙  مجمـوع الرسائـل ✦ :</b> {msg_count}</code>\n"
+    result += "<b>◈ ⦙  ملخـص الملـف ✦ : </b>\n"
     result += f"<code>{str(x)}</code>\n"
     result += f"{largest}"
     result += line + totalstring + line + runtimestring + line
@@ -1424,19 +1424,19 @@ async def monito_p_m_s(event):
                     if LOG_CHATS_.COUNT > 1:
                         await LOG_CHATS_.NEWPM.edit(
                             LOG_CHATS_.NEWPM.text.replace(
-                                "♛ ⦙   رسـالة جـديدة", f"{LOG_CHATS_.COUNT} "
+                                "◈ ⦙   رسـالة جـديدة", f"{LOG_CHATS_.COUNT} "
                             )
                         )
                     else:
                         await LOG_CHATS_.NEWPM.edit(
                             LOG_CHATS_.NEWPM.text.replace(
-                                "♛ ⦙   رسـالة جـديدة", f"{LOG_CHATS_.COUNT} "
+                                "◈ ⦙   رسـالة جـديدة", f"{LOG_CHATS_.COUNT} "
                             )
                         )
                     LOG_CHATS_.COUNT = 0
                 LOG_CHATS_.NEWPM = await event.client.send_message(
                     Config.PM_LOGGER_GROUP_ID,
-                    f"👤{_format.mentionuser(sender.first_name , sender.id)}\n  ◈ ⦙   قام بأرسال رسالة جديدة** \n♛ ⦙   ايدي الشخص   : `{chat.id}`",
+                    f"👤{_format.mentionuser(sender.first_name , sender.id)}\n  ◈ ⦙   قام بأرسال رسالة جديدة** \n◈ ⦙   ايدي الشخص   : `{chat.id}`",
                 )
             try:
                 if event.message:
@@ -1467,16 +1467,16 @@ async def log_tagged_messages(event):
     except Exception as e:
         LOGS.info(str(e))
     messaget = media_type(event)
-    resalt = f"♛ ⦙   المجموعه : </b><code>{hmm.title}</code>"
+    resalt = f"◈ ⦙   المجموعه : </b><code>{hmm.title}</code>"
     if full is not None:
         resalt += (
-            f"\n<b>♛ ⦙   من : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
+            f"\n<b>◈ ⦙   من : </b> 👤{_format.htmlmentionuser(full.first_name , full.id)}"
         )
     if messaget is not None:
-        resalt += f"\n<b>♛ ⦙   رسـالة جـديدة : </b><code>{messaget}</code>"
+        resalt += f"\n<b>◈ ⦙   رسـالة جـديدة : </b><code>{messaget}</code>"
     else:
-        resalt += f"\n<b>♛ ⦙   رسـالة جـديدة: </b>{event.message.message}"
-    resalt += f"\n<b>♛ ⦙   رابط الرساله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> اضغط هنا</a>"
+        resalt += f"\n<b>◈ ⦙   رسـالة جـديدة: </b>{event.message.message}"
+    resalt += f"\n<b>◈ ⦙   رابط الرساله : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> اضغط هنا</a>"
     if not event.is_private:
         await event.client.send_message(
             Config.PM_LOGGER_GROUP_ID,
@@ -1598,9 +1598,9 @@ async def set_group_photo(event):  # sourcery no-metrics
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "♛ ⦙   صوره_المجموعة\n"
-            f"♛ ⦙   صورة المجموعه {process} بنجاح "
-            f"♛ ⦙   المحادثة  📜 : {event.chat.title}(`{event.chat_id}`)",
+            "◈ ⦙   صوره_المجموعة\n"
+            f"◈ ⦙   صورة المجموعه {process} بنجاح "
+            f"◈ ⦙   المحادثة  📜 : {event.chat.title}(`{event.chat_id}`)",
         )
 
 async def get_chatinfo(event):
@@ -1682,9 +1682,9 @@ async def promote(event):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"♛ ⦙  ترقية  🆙\
-            \n♛ ⦙  المستخدم  🚹 : [{user.first_name}](tg://user?id={user.id})\
-            \n♛ ⦙  المحادثة  📜 : {event.chat.title} (`{event.chat_id}`)",
+            f"◈ ⦙  ترقية  🆙\
+            \n◈ ⦙  المستخدم  🚹 : [{user.first_name}](tg://user?id={user.id})\
+            \n◈ ⦙  المحادثة  📜 : {event.chat.title} (`{event.chat_id}`)",
         )
 
 @iqqhtani.on(admin_cmd(pattern=f"{UNADMINRAISE}(?: |$)(.*)"))
@@ -1711,15 +1711,15 @@ async def demote(event):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"♛ ⦙   تنزيل_مشرف\
-            \n♛ ⦙  المستخدم  🚹 : [{user.first_name}](tg://user?id={user.id})\
-            \n♛ ⦙  المحادثة  📜 : {event.chat.title}(`{event.chat_id}`)",
+            f"◈ ⦙   تنزيل_مشرف\
+            \n◈ ⦙  المستخدم  🚹 : [{user.first_name}](tg://user?id={user.id})\
+            \n◈ ⦙  المحادثة  📜 : {event.chat.title}(`{event.chat_id}`)",
         )
 
 
 @iqqhtani.on(admin_cmd(pattern="تثبيت(?: |$)(.*)"))
 async def pin(event):
-    "♛ ⦙   تثبيت  📌"
+    "◈ ⦙   تثبيت  📌"
     to_pin = event.reply_to_msg_id
     if not to_pin:
         return await edit_delete(event, " ◈ ⦙  يرجى الرد على الرسالة التي تريد تثبيتها 📨 **", 5)
@@ -1735,22 +1735,22 @@ async def pin(event):
     if BOTLOG and not event.is_private:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"♛ ⦙   تثبيت  📌\
-                \n♛ ⦙   تم تثبيت الرسالة بنجاح في الدردشة  📌\
-                \n♛ ⦙  المستخدم  🚹 : {event.chat.title}(`{event.chat_id}`)\
-                \n♛ ⦙  المحادثة  📜 : {is_silent}",
+            f"◈ ⦙   تثبيت  📌\
+                \n◈ ⦙   تم تثبيت الرسالة بنجاح في الدردشة  📌\
+                \n◈ ⦙  المستخدم  🚹 : {event.chat.title}(`{event.chat_id}`)\
+                \n◈ ⦙  المحادثة  📜 : {is_silent}",
         )
 
 
 @iqqhtani.on(admin_cmd(pattern="الغاء التثبيت(?: |$)(.*)"))
 async def pin(event):
-    "♛ ⦙  لإلغاء تثبيت رسائل من المجموعة  ⚠️"
+    "◈ ⦙  لإلغاء تثبيت رسائل من المجموعة  ⚠️"
     to_unpin = event.reply_to_msg_id
     options = (event.pattern_match.group(1)).strip()
     if not to_unpin and options != "all":
         return await edit_delete(
             event,
-            "♛ ⦙   يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل  📍",
+            "◈ ⦙   يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل  📍",
             5,
         )
     try:
@@ -1760,7 +1760,7 @@ async def pin(event):
             await event.client.unpin_message(event.chat_id)
         else:
             return await edit_delete(
-                event, "♛ ⦙   يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل  📍", 5
+                event, "◈ ⦙   يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل  📍", 5
             )
     except BadRequestError:
         return await edit_delete(event, NO_PERM, 5)
@@ -1771,13 +1771,13 @@ async def pin(event):
         await event.client.send_message(
             BOTLOG_CHATID,
             f" ◈ ⦙   الـغاء التثبيت  ❗️ \
-                \n** ♛ ⦙   تم بنجاح الغاء التثبيـت في الدردشة  ✅ \
-                \n♛ ⦙  الدردشـه  🔖 : {event.chat.title}(`{event.chat_id}`)",
+                \n** ◈ ⦙   تم بنجاح الغاء التثبيـت في الدردشة  ✅ \
+                \n◈ ⦙  الدردشـه  🔖 : {event.chat.title}(`{event.chat_id}`)",
         )
 
 @iqqhtani.on(admin_cmd(pattern="جلب الاحداث(?: |$)(.*)"))
 async def _iundlt(event):  # sourcery no-metrics
-    "♛ ⦙  لأخذ نظرة عن آخر الرسائل المحذوفة في المجموعة  💠"
+    "◈ ⦙  لأخذ نظرة عن آخر الرسائل المحذوفة في المجموعة  💠"
     catevent = await edit_or_reply(event, " ◈ ⦙  يتم البحث عن اخر الاحداث انتظر  🔍**")
     flag = event.pattern_match.group(1)
     if event.pattern_match.group(2) != "":
@@ -1799,9 +1799,9 @@ async def _iundlt(event):  # sourcery no-metrics
             ).user
             _media_type = media_type(msg.old)
             if _media_type is None:
-                deleted_msg += f"\n♛ ⦙   {msg.old.message} \n **تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                deleted_msg += f"\n◈ ⦙   {msg.old.message} \n **تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
             else:
-                deleted_msg += f"\n♛ ⦙   {_media_type} \n **تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                deleted_msg += f"\n◈ ⦙   {_media_type} \n **تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
         await edit_or_reply(catevent, deleted_msg)
     else:
         main_msg = await edit_or_reply(catevent, deleted_msg)
@@ -1812,11 +1812,11 @@ async def _iundlt(event):  # sourcery no-metrics
             _media_type = media_type(msg.old)
             if _media_type is None:
                 await main_msg.reply(
-                    f"♛ ⦙   {msg.old.message}\n**تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                    f"◈ ⦙   {msg.old.message}\n**تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}"
                 )
             else:
                 await main_msg.reply(
-                    f"♛ ⦙   {msg.old.message}\n**تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}",
+                    f"◈ ⦙   {msg.old.message}\n**تم ارسالها بـواسطة  🛃** {_format.mentionuser(ruser.first_name ,ruser.id)}",
                     file=msg.old.media,
                 )
 moment_worker = []
@@ -1885,7 +1885,7 @@ async def cancel_mentionall(event):
     return await event.respond('**تم ايقاف التاك **')
 @iqqhtani.on(admin_cmd(pattern=f"{BANDD}(?: |$)(.*)"))
 async def _ban_person(event):
-    "♛ ⦙   لحـظر شخص في كـروب مـعين"
+    "◈ ⦙   لحـظر شخص في كـروب مـعين"
     user, reason = await get_user_from_event(event)
     if not user:
         return
@@ -1894,8 +1894,8 @@ async def _ban_person(event):
     if user.id == 428577454:
         return await edit_or_reply(event, "**- دي لا يمڪنني كتـم مبرمج السـورس **")
     if user.id == event.client.uid:
-        return await edit_delete(event, "♛ ⦙   عـذرا لا تسـتطيع حـظر شـخص")
-    catevent = await edit_or_reply(event, "♛ ⦙   تـم حـظره بـنجاح")
+        return await edit_delete(event, "◈ ⦙   عـذرا لا تسـتطيع حـظر شـخص")
+    catevent = await edit_or_reply(event, "◈ ⦙   تـم حـظره بـنجاح")
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -1906,21 +1906,21 @@ async def _ban_person(event):
             await reply.delete()
     except BadRequestError:
         return await catevent.edit(
-            "♛ ⦙   ليـس لـدي جـميع الصـلاحيـات لكـن سيـبقى محـظور"
+            "◈ ⦙   ليـس لـدي جـميع الصـلاحيـات لكـن سيـبقى محـظور"
         )
     if reason:
         await catevent.edit(
-            f"♛ ⦙   المسـتخدم {_format.mentionuser(user.first_name ,user.id)} \n ♛ ⦙   تـم حـظره بنـجاح !!\n ◈ ⦙  السبب : **`{reason}`"
+            f"◈ ⦙   المسـتخدم {_format.mentionuser(user.first_name ,user.id)} \n ◈ ⦙   تـم حـظره بنـجاح !!\n ◈ ⦙  السبب : **`{reason}`"
         )
     else:
         await catevent.edit(
-            f"♛ ⦙   المسـتخدم {_format.mentionuser(user.first_name ,user.id)} \n ♛ ⦙   تـم حـظره بنـجاح ✅"
+            f"◈ ⦙   المسـتخدم {_format.mentionuser(user.first_name ,user.id)} \n ◈ ⦙   تـم حـظره بنـجاح ✅"
         )
     if BOTLOG:
         if reason:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"♛ ⦙   الحـظر\
+                f"◈ ⦙   الحـظر\
                 \nالمسـتخدم: [{user.first_name}](tg://user?id={user.id})\
                 \nالـدردشـة: {event.chat.title}\
                 \nايدي القروب(`{event.chat_id}`)\
@@ -1929,7 +1929,7 @@ async def _ban_person(event):
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"♛ ⦙   الحـظر\
+                f"◈ ⦙   الحـظر\
                 \nالمسـتخدم: [{user.first_name}](tg://user?id={user.id})\
                 \nالـدردشـة: {event.chat.title}\
                 \n ايـدي الكـروب: (`{event.chat_id}`)",
@@ -2068,25 +2068,25 @@ async def _(e):
         await eor(e, f"`{str(ex)}`")
 @iqqhtani.on(admin_cmd(pattern=f"{UNBANDD}(?: |$)(.*)"))
 async def nothanos(event):
-    "♛ ⦙   لألـغاء الـحظر لـشخص في كـروب مـعين"
+    "◈ ⦙   لألـغاء الـحظر لـشخص في كـروب مـعين"
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    catevent = await edit_or_reply(event, "♛ ⦙   جـار الـغاء الـحظر أنتـظر")
+    catevent = await edit_or_reply(event, "◈ ⦙   جـار الـغاء الـحظر أنتـظر")
     try:
         await event.client(EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS))
         await catevent.edit(
-            f"♛ ⦙   الـمستخدم {_format.mentionuser(user.first_name ,user.id)}\n ♛ ⦙   تـم الـغاء حـظره بنـجاح "
+            f"◈ ⦙   الـمستخدم {_format.mentionuser(user.first_name ,user.id)}\n ◈ ⦙   تـم الـغاء حـظره بنـجاح "
         )
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "♛ ⦙   الـغاء الـحظر \n"
+                "◈ ⦙   الـغاء الـحظر \n"
                 f"الـمستخدم: [{user.first_name}](tg://user?id={user.id})\n"
                 f"الـدردشـة: {event.chat.title}(`{event.chat_id}`)",
             )
     except UserIdInvalidError:
-        await catevent.edit("♛ ⦙   يـبدو أن هذه الـعمليـة تم إلغاؤهـا")
+        await catevent.edit("◈ ⦙   يـبدو أن هذه الـعمليـة تم إلغاؤهـا")
     except Exception as e:
         await catevent.edit(f"**خـطأ :**\n`{e}`")
 
@@ -2102,15 +2102,15 @@ async def iq(event):
     type_of_group = event.pattern_match.group(1)
     group_name = event.pattern_match.group(2)
     if type_of_group == "قناه":
-        descript = "♛ ⦙   هذه قناة إختبار أُنشئت بإستعمال القحطاني"
+        descript = "◈ ⦙   هذه قناة إختبار أُنشئت بإستعمال القحطاني"
     else:
-        descript = "♛ ⦙   هذه المجموعه إختبار أُنشئت بإستعمال القحطاني"
+        descript = "◈ ⦙   هذه المجموعه إختبار أُنشئت بإستعمال القحطاني"
     if type_of_group == "مجموعه":
         try:
             result = await event.client(functions.messages.CreateChatRequest(users=[Config.TG_BOT_USERNAME], title=group_name))
             created_chat_id = result.chats[0].id
             result = await event.client(functions.messages.ExportChatInviteRequest(peer=created_chat_id))
-            await edit_or_reply(event, f"♛ ⦙   اسم المجموعه `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {result.link}")
+            await edit_or_reply(event, f"◈ ⦙   اسم المجموعه `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {result.link}")
         except Exception as e:
             await edit_delete(event, f" ◈ ⦙   حدث خطأ ما  🆘:**\n{str(e)}")
     elif type_of_group == "قناه":
@@ -2119,13 +2119,13 @@ async def iq(event):
             created_chat_id = r.chats[0].id
             result = await event.client(
                 functions.messages.ExportChatInviteRequest(peer=created_chat_id))
-            await edit_or_reply(event, f"♛ ⦙   اسم القناه `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {result.link}")
+            await edit_or_reply(event, f"◈ ⦙   اسم القناه `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {result.link}")
         except Exception as e:
             await edit_delete(event, f" ◈ ⦙   حدث خطأ ما  🆘 :**\n{str(e)}")
     elif type_of_group == "مجموعه":
         answer = await create_supergroup(group_name, event.client, Config.TG_BOT_USERNAME, descript)
         if answer[0] != "error":
-            await edit_or_reply(event, f"♛ ⦙   خارق جروب `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {answer[0].link}")
+            await edit_or_reply(event, f"◈ ⦙   خارق جروب `{group_name}` ** تم الإنشاء بنجاح  ✅  دخول ** {answer[0].link}")
         else:
             await edit_delete(event, f" ◈ ⦙   حدث خطأ ما  🆘 :**\n{str(answer[1])}")
     else:

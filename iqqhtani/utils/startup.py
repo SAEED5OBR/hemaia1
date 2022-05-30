@@ -46,7 +46,7 @@ async def load_plugins(folder):
 async def startupmessage():
     try:
         if BOTLOG:
-            Config.CATUBLOGO = await iqqhtani.tgbot.send_file(BOTLOG_CHATID, "https://up6.cc/2022/05/165152347887371.jpg", caption="♛ ⦙ تـمّ  اعـادة تشـغيل\n تليثـون العـرب ✓  :  [ 7.6 ] .\n\n♛ ⦙ للحصول على اوامر السورس\n أرسـل : (  `.اوامري`  ) \n\n♛ ⦙ لمـعرفة كيفية تغير بعض كلايش\n او صور السـورس  أرسـل  :\n (  `.مساعده`  )\n\n♛ ⦙ القناة الرسمية القحطاني : @ghtanisaeed\n♛ ⦙ فارات سورس القحطاني :@ghtanisaeed \n♛ ⦙ كلايش القحطاني:  @ghtanisaeed\n ♛ ⦙التحديثات والاضافات :  @ghtanisaeed\n",                buttons=[(Button.url("مطور القحطاني الرسمي", "https://t.me/SAEED5OBR"),)],            )
+            Config.CATUBLOGO = await iqqhtani.tgbot.send_file(BOTLOG_CHATID, "https://up6.cc/2022/05/165152347887371.jpg", caption="♛ ⦙ تـمّ  اعـادة تشـغيل\n القحطاني ✓  :  [ 7.6 ] .\n\n♛ ⦙ للحصول على اوامر السورس\n أرسـل : (  `.اوامري`  ) \n\n♛ ⦙ لمـعرفة كيفية تغير بعض كلايش\n او صور السـورس  أرسـل  :\n (  `.مساعده`  )\n\n♛ ⦙ القناة الرسمية القحطاني : @ghtanisaeed\n♛ ⦙ فارات سورس القحطاني :@ghtanisaeed \n♛ ⦙ كلايش القحطاني:  @ghtanisaeed\n ♛ ⦙التحديثات والاضافات :  @ghtanisaeed\n",                buttons=[(Button.url("مطور القحطاني الرسمي", "https://t.me/SAEED5OBR"),)],            )
     except Exception as e:
         LOGS.error(e)
         return None

@@ -1213,7 +1213,7 @@ ownerklanr_id = 427628975
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerklanr_id :
-        order = await event.reply('اهلا مطوري كلاينر - @Iqqhtani')
+        order = await event.reply('اهلا مطوري القحطاني - @Iqqhtani')
 @iqqhtani.on(admin_cmd(pattern="تفاعلات(?: |$)(.*)"))
 async def iq(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -2025,7 +2025,7 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.sender_id
         if idd == 427628975:
-            await catevent.edit(                "عذرا هذا مبرمج السورس كلاينر"            )
+            await catevent.edit(                "عذرا هذا مبرمج السورس القحطاني"            )
         else:
             jnl = (                "تم حظر المستخدم :"  "[{}](tg://user?id={})"  "\n\n"                "**اسم الشخص  : ** __{}__\n"                "**ايدي الشخص : ** `{}`\n" ).format(firstname, idd, firstname, idd)
             if usname is None:

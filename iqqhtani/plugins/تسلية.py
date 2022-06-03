@@ -1261,7 +1261,7 @@ async def typewriter(typew):
     await typew.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💔<\\  وصدمني")
-@iqqhtani.on(admin_cmd(pattern="اشوفج السطح(?: |$)(.*)"))
+@iqqhtani.on(admin_cmd(pattern="قلة ادب(?: |$)(.*)"))
 async def iq(event):
     "أمر الرسوم المتحركة"
     animation_interval = 3

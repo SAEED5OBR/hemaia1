@@ -338,7 +338,7 @@ async def iq(iqqhtaniinsta):
 @iqqhtani.on(admin_cmd(pattern="هديه ?(.*)"))
 async def iq(iqqhtani):
     kkno = iqqhtani.pattern_match.group(1)
-    donttag = "@i4bot"
+    donttag = "@ghtanisaeed"
     if iqqhtani.reply_to_msg_id:
         await iqqhtani.get_reply_message()
     l5 = await bot.inline_query(donttag, kkno)

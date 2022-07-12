@@ -595,7 +595,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         query = iqqhtani.text
         await bot.get_me()
         if query.startswith("تنصيب") and iqqhtani.query.user_id == bot.uid:
-            buttons = [[Button.url("1- قناة السورس ", "https://t.me/ghtanisaeed"), Button.url("2- استخراج ايبيات", "https://my.telegram.org/"),],[Button.url("3- كود تيرميكس", "@REDFHAS_BOT"), Button.url("4- بوت فاذر", "http://t.me/BotFather"),],[Button.url("5- رابط التنصيب", "https://dashboard.heroku.com/new?template=https://github.com/SAEED5OBR/hemaia"),],[Button.url("المطـور 👨🏼‍💻", "https://t.me/SAEED5OBR"),]]
+            buttons = [[Button.url("1- قناة السورس ", "https://t.me/ghtanisaeed"), Button.url("2- استخراج ايبيات", "https://my.telegram.org/"),],[Button.url("3- كود تيرميكس", "https://my.telegram.org/"), Button.url("4- بوت فاذر", "http://t.me/BotFather"),],[Button.url("5- رابط التنصيب", "https://dashboard.heroku.com/new?template=https://github.com/SAEED5OBR/hemaia"),],[Button.url("المطـور 👨🏼‍💻", "https://t.me/SAEED5OBR"),]]
             if IqqhtaniPC and IqqhtaniPC.endswith((".jpg", ".png", "gif", "mp4")):
                 result = builder.photo(IqqhtaniPC, text=help1, buttons=buttons, link_preview=False)
             elif IqqhtaniPC:

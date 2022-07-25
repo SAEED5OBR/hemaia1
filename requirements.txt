@@ -10,6 +10,7 @@ cowpy
 dataclasses
 pyminizip
 DateTime
+emoji
 fonttools
 geopy
 gitpython
